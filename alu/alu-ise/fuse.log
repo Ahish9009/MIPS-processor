@@ -7,9 +7,11 @@ Analyzing Verilog file "/home/ahish/Sem-4/proc/alu/alu-ise/alu.v" into library w
 Analyzing Verilog file "/home/ahish/Sem-4/proc/alu/alu-ise/alu_tb.v" into library work
 Analyzing Verilog file "/opt/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/ahish/Sem-4/proc/alu/alu-ise/alu.v" Line 49: Port c_out2 is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ahish/Sem-4/proc/alu/alu-ise/alu.v" Line 50: Port c_out2 is not connected to this instance
 Completed static elaboration
 Fuse Memory Usage: 95092 KB
-Fuse CPU Usage: 870 ms
+Fuse CPU Usage: 930 ms
 Compiling module fulladder
 Compiling module adder32bit
 Compiling module alu
@@ -19,6 +21,6 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 5 Verilog Units
 Built simulation executable /home/ahish/Sem-4/proc/alu/alu-ise/alu_tb_isim_beh.exe
-Fuse Memory Usage: 524200 KB
-Fuse CPU Usage: 880 ms
+Fuse Memory Usage: 524204 KB
+Fuse CPU Usage: 950 ms
 GCC CPU Usage: 380 ms

@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ahish/Sem-4/proc/alu/alu-ise/alu.v" Line 49: Port <arg fmt="%s" index="1">c_out2</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ahish/Sem-4/proc/alu/alu-ise/alu.v" Line 50: Port <arg fmt="%s" index="1">c_out2</arg> is not connected to this instance
+</msg>
+
 </messages>
 

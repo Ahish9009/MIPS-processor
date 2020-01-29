@@ -25,7 +25,7 @@ static const char *ng0 = "/home/ahish/Sem-4/proc/alu/alu-ise/alu.v";
 
 
 
-static void Cont_241_0(char *t0)
+static void Cont_246_0(char *t0)
 {
     char t5[8];
     char t20[8];
@@ -81,7 +81,7 @@ LAB0:    t1 = (t0 + 2840U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(241, ng0);
+LAB2:    xsi_set_current_line(246, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = (t0 + 1208U);
@@ -157,7 +157,7 @@ LAB7:    t31 = *((unsigned int *)t20);
 
 }
 
-static void Cont_242_1(char *t0)
+static void Cont_247_1(char *t0)
 {
     char t5[8];
     char t40[8];
@@ -293,7 +293,7 @@ LAB0:    t1 = (t0 + 3088U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(242, ng0);
+LAB2:    xsi_set_current_line(247, ng0);
     t2 = (t0 + 1208U);
     t3 = *((char **)t2);
     t2 = (t0 + 1368U);
@@ -480,7 +480,7 @@ LAB13:    t97 = *((unsigned int *)t85);
 
 extern void work_m_08648737137012366775_2902715030_init()
 {
-	static char *pe[] = {(void *)Cont_241_0,(void *)Cont_242_1};
+	static char *pe[] = {(void *)Cont_246_0,(void *)Cont_247_1};
 	xsi_register_didat("work_m_08648737137012366775_2902715030", "isim/alu_tb_isim_beh.exe.sim/work/m_08648737137012366775_2902715030.didat");
 	xsi_register_executes(pe);
 }

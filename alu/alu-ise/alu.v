@@ -36,7 +36,7 @@ module alu(
 	//assigning final values from reg
 	assign res = temp_res;
 	assign v = temp_v;
-	assign zero = &res;
+	assign zero = &(~res);
 	assign c_out = temp_c_out;
 	
 	//for addition and subtraction
@@ -44,7 +44,7 @@ module alu(
 	wire [31:0] sum, diff;
 	adder32bit add(1'b0, x, y, sum, c_out_add, temp_v_add); 
 	adder32bit sub(1'b1, x, ~y, diff, c_out_sub, temp_v_sub); 
-
+	
 	//main
 	always @(*)
 	begin 
@@ -69,13 +69,13 @@ module alu(
 			4'b0010:
 			//multiplication
 			begin
-				temp_res = 32'b0;
+				temp_res = x*y;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
 			
 			4'b0011:
-			//division
+			//division - not implemented yet
 			begin
 				temp_res = 32'b0;
 				temp_v = 0;
@@ -188,11 +188,11 @@ module adder32bit(
     input [31:0] y,
     output [31:0] sum,
     output c_out,
-    output v
+    output v,
+	 output c_out2
     );
 	
     wire [29:0] temp_c;
-	 wire c_out2;
     assign v = c_out2^c_out;
 	 
 	 fulladder A1(c_in, x[0], y[0], sum[0], temp_c[0]);
@@ -240,5 +240,6 @@ module fulladder(
 	
 	assign sum = c_in^x^y;
 	assign c_out = (x&y)|(c_in&(x^y));
+	
 endmodule
 

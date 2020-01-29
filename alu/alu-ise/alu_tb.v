@@ -64,10 +64,12 @@ module alu_tb;
 	always #8 opselect[3]=~opselect[3];
 	always #4 x[0]=~x[0];
 	always #8 y[0]=~y[0];
+	always #12 x[1]=~x[1];
+	always #15 y[1]=~y[1];
 	always #16 x[2]=~x[2];
 	always #32 y[2]=~y[2];
-	always #7 x[31]=~x[31];
-	always #5 y[31]=~y[31];
+	always #21 x[31]=~x[31];
+	always #23 y[31]=~y[31];
     
 endmodule
 

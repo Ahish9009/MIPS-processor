@@ -25,7 +25,7 @@ static const char *ng0 = "/home/ahish/Sem-4/proc/alu/alu-ise/alu.v";
 
 
 
-static void Cont_196_0(char *t0)
+static void Cont_201_0(char *t0)
 {
     char t5[8];
     char *t1;
@@ -66,8 +66,8 @@ LAB0:    t1 = (t0 + 3320U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(196, ng0);
-    t2 = (t0 + 2168U);
+LAB2:    xsi_set_current_line(201, ng0);
+    t2 = (t0 + 2008U);
     t3 = *((char **)t2);
     t2 = (t0 + 1688U);
     t4 = *((char **)t2);
@@ -119,9 +119,9 @@ LAB4:    t16 = *((unsigned int *)t5);
 }
 
 
-extern void work_m_07246071685782112537_4159358495_init()
+extern void work_m_05500401954396341194_4159358495_init()
 {
-	static char *pe[] = {(void *)Cont_196_0};
-	xsi_register_didat("work_m_07246071685782112537_4159358495", "isim/alu_tb_isim_beh.exe.sim/work/m_07246071685782112537_4159358495.didat");
+	static char *pe[] = {(void *)Cont_201_0};
+	xsi_register_didat("work_m_05500401954396341194_4159358495", "isim/alu_tb_isim_beh.exe.sim/work/m_05500401954396341194_4159358495.didat");
 	xsi_register_executes(pe);
 }
