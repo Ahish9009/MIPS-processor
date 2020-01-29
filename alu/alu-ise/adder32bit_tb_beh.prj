@@ -1,0 +1,3 @@
+verilog work "adder31bit.v"
+verilog work "adder32bit-tb.v"
+verilog work "/opt/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

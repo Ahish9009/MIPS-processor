@@ -1,0 +1,14 @@
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.xst" -ofn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.syr" 
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.xst" -ofn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 adder31bit.ngc adder31bit.ngd  
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.xst" -ofn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 adder31bit.ngc adder31bit.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o adder31bit_map.ncd adder31bit.ngd adder31bit.pcf 
+par -w -intstyle ise -ol high -t 1 adder31bit_map.ncd adder31bit.ncd adder31bit.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml adder31bit.twx adder31bit.ncd -o adder31bit.twr adder31bit.pcf 
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.xst" -ofn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.syr" 
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.xst" -ofn "/home/ahish/Sem-4/proc/alu/alu-ise/adder31bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 adder31bit.ngc adder31bit.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o adder31bit_map.ncd adder31bit.ngd adder31bit.pcf 
+par -w -intstyle ise -ol high -t 1 adder31bit_map.ncd adder31bit.ncd adder31bit.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml adder31bit.twx adder31bit.ncd -o adder31bit.twr adder31bit.pcf 

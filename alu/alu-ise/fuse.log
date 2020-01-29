@@ -1,0 +1,24 @@
+Running: /opt/Xilinx/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /home/ahish/Sem-4/proc/alu/alu-ise/alu_tb_isim_beh.exe -prj /home/ahish/Sem-4/proc/alu/alu-ise/alu_tb_beh.prj work.alu_tb work.glbl 
+ISim O.87xd (signature 0x8ddf5b5d)
+Number of CPUs detected in this system: 3
+Turning on mult-threading, number of parallel sub-compilation jobs: 6 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/ahish/Sem-4/proc/alu/alu-ise/alu.v" into library work
+Analyzing Verilog file "/home/ahish/Sem-4/proc/alu/alu-ise/alu_tb.v" into library work
+Analyzing Verilog file "/opt/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 95092 KB
+Fuse CPU Usage: 870 ms
+Compiling module fulladder
+Compiling module adder32bit
+Compiling module alu
+Compiling module alu_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 Verilog Units
+Built simulation executable /home/ahish/Sem-4/proc/alu/alu-ise/alu_tb_isim_beh.exe
+Fuse Memory Usage: 524200 KB
+Fuse CPU Usage: 880 ms
+GCC CPU Usage: 380 ms

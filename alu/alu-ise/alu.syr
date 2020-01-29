@@ -1,0 +1,388 @@
+Release 13.4 - xst O.87xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: alu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "alu.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "alu"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : alu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "alu.v" in library work
+Module <alu> compiled
+Module <adder32bit> compiled
+Module <fulladder> compiled
+No errors in compilation
+Analysis of file <"alu.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <alu> in library <work>.
+
+Analyzing hierarchy for module <adder32bit> in library <work>.
+
+Analyzing hierarchy for module <fulladder> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <alu>.
+Module <alu> is correct for synthesis.
+ 
+Analyzing module <adder32bit> in library <work>.
+Module <adder32bit> is correct for synthesis.
+ 
+Analyzing module <fulladder> in library <work>.
+Module <fulladder> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <fulladder>.
+    Related source file is "alu.v".
+    Found 1-bit xor2 for signal <sum>.
+    Found 1-bit xor2 for signal <c_out$xor0000> created at line 242.
+Unit <fulladder> synthesized.
+
+
+Synthesizing Unit <adder32bit>.
+    Related source file is "alu.v".
+    Found 1-bit xor2 for signal <v>.
+Unit <adder32bit> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "alu.v".
+    Found 1-bit 16-to-1 multiplexer for signal <temp_c_out>.
+    Found 32-bit 16-to-1 multiplexer for signal <temp_res>.
+    Found 32-bit comparator equal for signal <temp_res$cmp_eq0000> created at line 120.
+    Found 32-bit comparator greater for signal <temp_res$cmp_gt0000> created at line 104.
+    Found 32-bit comparator less for signal <temp_res$cmp_lt0000> created at line 112.
+    Found 32-bit xor2 for signal <temp_res$xor0000> created at line 160.
+    Found 1-bit 16-to-1 multiplexer for signal <temp_v>.
+    Summary:
+	inferred   3 Comparator(s).
+	inferred  34 Multiplexer(s).
+Unit <alu> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Comparators                                          : 3
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 1
+# Multiplexers                                         : 3
+ 1-bit 16-to-1 multiplexer                             : 2
+ 32-bit 16-to-1 multiplexer                            : 1
+# Xors                                                 : 131
+ 1-bit xor2                                            : 130
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Comparators                                          : 3
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 1
+# Multiplexers                                         : 3
+ 1-bit 16-to-1 multiplexer                             : 2
+ 32-bit 16-to-1 multiplexer                            : 1
+# Xors                                                 : 131
+ 1-bit xor2                                            : 130
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <alu> ...
+
+Optimizing unit <adder32bit> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block alu, actual ratio is 7.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : alu.ngr
+Top Level Output File Name         : alu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 103
+
+Cell Usage :
+# BELS                             : 631
+#      GND                         : 1
+#      LUT2                        : 65
+#      LUT3                        : 251
+#      LUT4                        : 94
+#      MUXCY                       : 88
+#      MUXF5                       : 99
+#      MUXF6                       : 32
+#      VCC                         : 1
+# IO Buffers                       : 103
+#      IBUF                        : 68
+#      OBUF                        : 35
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                      214  out of   4656     4%  
+ Number of 4 input LUTs:                410  out of   9312     4%  
+ Number of IOs:                         103
+ Number of bonded IOBs:                 103  out of    232    44%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 44.627ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 6740 / 35
+-------------------------------------------------------------------------
+Delay:               44.627ns (Levels of Logic = 38)
+  Source:            x<0> (PAD)
+  Destination:       zero (PAD)
+
+  Data Path: x<0> to zero
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.106   0.988  x_0_IBUF (x_0_IBUF)
+     LUT4:I0->O            2   0.612   0.532  sub/A2/c_out1 (sub/temp_c<1>)
+     LUT3:I0->O            2   0.612   0.532  sub/A4/Mxor_sum_Result11 (sub/N2)
+     LUT3:I0->O            2   0.612   0.532  sub/A4/c_out1 (sub/temp_c<3>)
+     LUT3:I0->O            2   0.612   0.532  sub/A6/Mxor_sum_Result11 (sub/N3)
+     LUT3:I0->O            2   0.612   0.532  sub/A6/c_out1 (sub/temp_c<5>)
+     LUT3:I0->O            2   0.612   0.532  sub/A8/Mxor_sum_Result11 (sub/N4)
+     LUT3:I0->O            2   0.612   0.532  sub/A8/c_out1 (sub/temp_c<7>)
+     LUT3:I0->O            2   0.612   0.532  sub/A10/Mxor_sum_Result11 (sub/N5)
+     LUT3:I0->O            2   0.612   0.532  sub/A10/c_out1 (sub/temp_c<9>)
+     LUT3:I0->O            2   0.612   0.532  sub/A12/Mxor_sum_Result11 (sub/N6)
+     LUT3:I0->O            2   0.612   0.532  sub/A12/c_out1 (sub/temp_c<11>)
+     LUT3:I0->O            2   0.612   0.532  sub/A14/Mxor_sum_Result11 (sub/N7)
+     LUT3:I0->O            2   0.612   0.532  sub/A14/c_out1 (sub/temp_c<13>)
+     LUT3:I0->O            2   0.612   0.532  sub/A16/Mxor_sum_Result11 (sub/N8)
+     LUT3:I0->O            2   0.612   0.532  sub/A16/c_out1 (sub/temp_c<15>)
+     LUT3:I0->O            2   0.612   0.532  sub/A18/Mxor_sum_Result11 (sub/N9)
+     LUT3:I0->O            2   0.612   0.532  sub/A18/c_out1 (sub/temp_c<17>)
+     LUT3:I0->O            2   0.612   0.532  sub/A20/Mxor_sum_Result11 (sub/N10)
+     LUT3:I0->O            2   0.612   0.532  sub/A20/c_out1 (sub/temp_c<19>)
+     LUT3:I0->O            2   0.612   0.532  sub/A22/Mxor_sum_Result11 (sub/N111)
+     LUT3:I0->O            2   0.612   0.532  sub/A22/c_out1 (sub/temp_c<21>)
+     LUT3:I0->O            2   0.612   0.532  sub/A24/Mxor_sum_Result11 (sub/N12)
+     LUT3:I0->O            2   0.612   0.532  sub/A24/c_out1 (sub/temp_c<23>)
+     LUT3:I0->O            2   0.612   0.532  sub/A26/Mxor_sum_Result11 (sub/N13)
+     LUT3:I0->O            2   0.612   0.532  sub/A26/c_out1 (sub/temp_c<25>)
+     LUT3:I0->O            2   0.612   0.532  sub/A28/Mxor_sum_Result11 (sub/N14)
+     LUT3:I0->O            2   0.612   0.532  sub/A28/c_out1 (sub/temp_c<27>)
+     LUT3:I0->O            2   0.612   0.532  sub/A30/Mxor_sum_Result11 (sub/N15)
+     LUT3:I0->O            2   0.612   0.532  sub/A30/c_out1 (sub/temp_c<29>)
+     LUT3:I0->O            3   0.612   0.520  sub/A32/Mxor_sum_Result11 (sub/N01)
+     LUT3:I1->O            1   0.612   0.387  Mmux_temp_res_723_SW0 (N20)
+     LUT4:I2->O            1   0.612   0.000  Mmux_temp_res_723 (Mmux_temp_res_723)
+     MUXF5:I0->O           1   0.278   0.426  Mmux_temp_res_5_f5_22 (Mmux_temp_res_5_f523)
+     LUT3:I1->O            2   0.612   0.410  opselect<3>242 (res_31_OBUF)
+     LUT4:I2->O            1   0.612   0.000  zero_wg_lut<7> (zero_wg_lut<7>)
+     MUXCY:S->O            1   0.752   0.357  zero_wg_cy<7> (zero_OBUF)
+     OBUF:I->O                 3.169          zero_OBUF (zero)
+    ----------------------------------------
+    Total                     44.627ns (26.113ns logic, 18.514ns route)
+                                       (58.5% logic, 41.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.78 secs
+ 
+--> 
+
+
+Total memory usage is 531600 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
