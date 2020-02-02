@@ -28,19 +28,25 @@ module decode_instr(
 	wire [25:0] instr_index;
 	
 	reg [3:0] alu_ctr;
-	reg alu_src, reg_write, sign_ext, reg_dst, mem_read, mem_write, jump, branch;
+	reg alu_src_reg;
+	wire alu_src = alu_src_reg;
+	//wire reg_dst, reg_write, mem_read, mem_write, jump, branch;
 	 
 	assign opcode = instr[31:26];
 	assign rs = instr[25:21];
  	assign rt = instr[20:16];
-   assign shamt = instr[10:6];
+	assign shamt = instr[10:6];
 	assign funct = instr[5:0];
 	assign imm16 = instr[15:0];
 	assign instr_index = instr[25:0];
 	
 	assign reg_dst = (opcode == 6'b000000) ? 1 : 0;
-	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000) ? 1 : 0;
-	
+	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 | opcode == 6'b10011) ? 1 : 0;
+	assign mem_read = (opcode == 6'b100011) ? 1 : 0;
+	assign mem_write = (opcode == 6'b101011) ? 1 : 0;
+	assign jump = (opcode == 6'b000010) ? 1 : 0;
+	assign branch = (opcode == 6'b000100) ? 1 : 0;	
+	assign sign_ext = ( (opcode == 6'b000000 & (funct == 6'b100000 | funct == 6'b100010) | opcode == 6'b001000)) ? 1 : 0; 
 	
 	always @(*) begin
 		
