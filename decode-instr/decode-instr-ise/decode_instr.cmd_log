@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/decode_instr.xst" -ofn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/decode_instr.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 decode_instr.ngc decode_instr.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o decode_instr_map.ncd decode_instr.ngd decode_instr.pcf 
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/decode_instr.xst" -ofn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/decode_instr.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 decode_instr.ngc decode_instr.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o decode_instr_map.ncd decode_instr.ngd decode_instr.pcf 
