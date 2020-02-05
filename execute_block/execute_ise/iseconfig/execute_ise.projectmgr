@@ -1,36 +1,34 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--This is an ISE project configuration file.-->
 <!--It holds project specific layout data for the projectmgr plugin.-->
 <!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
-<Project version="2" owner="projectmgr" name="decode-instr-ise" >
+<Project version="2" owner="projectmgr" name="execute_ise" >
    <!--This is an ISE project configuration file.-->
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
-         <ClosedNode>/execute_unit |home|ahish|Sem-4|proc|decode-instr|decode-instr-ise|execute_unit.v/ALU1 - alu</ClosedNode>
+         <ClosedNode>/execute_unit |home|ahish|Sem-4|proc|execute_block|execute_ise|execute_unit.v/ALU1 - alu</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>ALU1 - alu (/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v)</SelectedItem>
+         <SelectedItem>execute_unit (/home/ahish/Sem-4/proc/execute_block/execute_ise/execute_unit.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021a000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021a0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>ALU1 - alu (/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v)</CurrentItem>
+      <CurrentItem>execute_unit (/home/ahish/Sem-4/proc/execute_block/execute_ise/execute_unit.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
-      <SelectedItems>
-         <SelectedItem/>
-      </SelectedItems>
+      <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000232000000010000000100000000000000000000000064ffffffff000000810000000000000001000002320000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" ></ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -39,9 +37,9 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000248000000040101000100000000000000000000000064ffffffff0000008100000000000000040000008d00000001000000000000004e0000000100000000000001090000000100000000000000640000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000002c8000000040101000100000000000000000000000064ffffffff0000008100000000000000040000008d00000001000000000000004e0000000100000000000001090000000100000000000000e40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>decode_instr.v</CurrentItem>
+      <CurrentItem>alu.v</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -73,24 +71,19 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
-   <SourceProcessView>000000ff00000000000000020000031f0000032001000000060100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
-         <ClosedNode>/execute_tb |home|ahish|Sem-4|proc|decode-instr|decode-instr-ise|execute_tb.v/uut - execute_unit/ALU1 - alu</ClosedNode>
-         <ClosedNode>/execute_tb2 |home|ahish|Sem-4|proc|decode-instr|decode-instr-ise|execute_tb2.v</ClosedNode>
-         <ClosedNode>/execute_tb3 |home|ahish|Sem-4|proc|decode-instr|decode-instr-ise|execute_tb3.v</ClosedNode>
-         <ClosedNode>/execute_tb4 |home|ahish|Sem-4|proc|decode-instr|decode-instr-ise|execute_tb4.v</ClosedNode>
+         <ClosedNode>/execute_tb4 |home|ahish|Sem-4|proc|execute_block|execute_ise|execute_tb.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>execute_tb4 (/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_tb4.v)</SelectedItem>
+         <SelectedItem>execute_tb4 (/home/ahish/Sem-4/proc/execute_block/execute_ise/execute_tb.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000239000000020000000000000000000000000200000064ffffffff000000810000000300000002000002390000000100000003000000000000000100000003</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>execute_tb4 (/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_tb4.v)</CurrentItem>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001bb000000020000000000000000000000000200000064ffffffff000000810000000300000002000001bb0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>execute_tb4 (/home/ahish/Sem-4/proc/execute_block/execute_ise/execute_tb.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -102,7 +95,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000232000000010000000100000000000000000000000064ffffffff000000810000000000000001000002320000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000002cc000000010000000100000000000000000000000064ffffffff000000810000000000000001000002cc0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -119,4 +112,6 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
+   <SourceProcessView>000000ff0000000000000002000002330000015301000000060100000002</SourceProcessView>
+   <CurrentView>Behavioral Simulation</CurrentView>
 </Project>

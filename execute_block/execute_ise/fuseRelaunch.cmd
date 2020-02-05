@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ahish/Sem-4/proc/execute_block/execute_ise/execute_tb4_isim_beh.exe" -prj "/home/ahish/Sem-4/proc/execute_block/execute_ise/execute_tb4_beh.prj" "work.execute_tb4" "work.glbl" 

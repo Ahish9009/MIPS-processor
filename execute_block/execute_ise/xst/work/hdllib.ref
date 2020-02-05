@@ -1,0 +1,8 @@
+MO decode_instr NULL decode_instr.v vlg7B/decode__instr.bin 1580907379
+MO adder32bit NULL alu.v vlg64/adder32bit.bin 1580907379
+MO mux2x1_5 NULL mux2x1_5.v vlg21/mux2x1__5.bin 1580907379
+MO fulladder NULL alu.v vlg33/fulladder.bin 1580907379
+MO mux2x1_32 NULL mux2x1_32.v vlg4D/mux2x1__32.bin 1580907379
+MO execute_unit NULL execute_unit.v vlg22/execute__unit.bin 1580907379
+MO extender NULL extender.v vlg77/extender.bin 1580907379
+MO alu NULL alu.v vlg0A/alu.bin 1580907379
