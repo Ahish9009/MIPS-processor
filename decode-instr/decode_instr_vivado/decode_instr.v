@@ -29,11 +29,14 @@ module decode_instr(
     output branch,
     output sign_ext,
     output alu_src,
-    output [3:0] alu_ctr
+    output [3:0] alu_ctr,
+    output [4:0] rs,
+    output [4:0] rt,
+    output [4:0] rd
     );
 	 
 	wire [5:0] opcode, funct;
-	wire [4:0] rs, rt, rd, shamt;
+	wire [4:0] shamt;
 //	wire [15:0] imm16;
 	wire [25:0] instr_index;
 	

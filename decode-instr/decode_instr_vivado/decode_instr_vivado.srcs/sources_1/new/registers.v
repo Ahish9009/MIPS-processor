@@ -25,19 +25,18 @@ module registers(
     input rst,
     input reg_write,
     input reg_dst,
-    input [4:0] rs,
-    input [4:0] rt,
-    input [4:0] rd,
+    input [4:0] ra,
+    input [4:0] rb,
+    input [4:0] rw,
     input [31:0] data,
     output [31:0] busA,
     output [31:0] busB
     );
     
     reg [31:0] regs [31:0];
-    wire reg_final_dst = (reg_dst == 1'b1) ? rd : rt;
     
-    wire busA = regs[rs];
-    wire busB = regs[rt];
+    wire busA = regs[ra];
+    wire busB = regs[rb];
     
     integer i;
     initial begin 
@@ -54,7 +53,7 @@ module registers(
             end
         end       
         else if (reg_write == 1'b1) begin
-            regs[reg_final_dst] = data;
+            regs[rw] = data;
         end
         
     end
