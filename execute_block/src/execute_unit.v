@@ -25,45 +25,45 @@ module execute_unit(
     output [31:0] busA, //have to show the full array here
     output [31:0] busB,
     output [31:0] busW,
-	 output [31:0] reg0,
-	 output [31:0] reg1,
-	 output [31:0] reg2,
-	 output [31:0] reg3,
-	 output [31:0] reg4,
-	 output [31:0] reg5,
-	 output [31:0] reg6,
-	 output [31:0] reg7,
-	 output [31:0] reg8,
-	 output [31:0] reg9,
-	 output [31:0] reg10,
-	 output [31:0] reg11,
-	 output [31:0] reg12,
-	 output [31:0] reg13,
-	 output [31:0] reg14,
-	 output [31:0] reg15,
-	 output [31:0] reg16,
-	 output [31:0] reg17,
-	 output [31:0] reg18,
-	 output [31:0] reg19,
-	 output [31:0] reg20,
-	 output [31:0] reg21,
-	 output [31:0] reg22,
-	 output [31:0] reg23,
-	 output [31:0] reg24,
-	 output [31:0] reg25,
-	 output [31:0] reg26,
-	 output [31:0] reg27,
-	 output [31:0] reg29,
-	 output [31:0] reg30,
-	 output [31:0] reg31
+    output [31:0] reg0,
+    output [31:0] reg1,
+    output [31:0] reg2,
+    output [31:0] reg3,
+    output [31:0] reg4,
+    output [31:0] reg5,
+    output [31:0] reg6,
+    output [31:0] reg7,
+    output [31:0] reg8,
+    output [31:0] reg9,
+    output [31:0] reg10,
+    output [31:0] reg11,
+    output [31:0] reg12,
+    output [31:0] reg13,
+    output [31:0] reg14,
+    output [31:0] reg15,
+    output [31:0] reg16,
+    output [31:0] reg17,
+    output [31:0] reg18,
+    output [31:0] reg19,
+    output [31:0] reg20,
+    output [31:0] reg21,
+    output [31:0] reg22,
+    output [31:0] reg23,
+    output [31:0] reg24,
+    output [31:0] reg25,
+    output [31:0] reg26,
+    output [31:0] reg27,
+    output [31:0] reg29,
+    output [31:0] reg30,
+    output [31:0] reg31
     );
 /*
 		initializing registers
 */
-	 reg [31:0] regs [31:0]; //initializes the array
+    reg [31:0] regs [31:0]; //initializes the array
 	 
-	 //sets all regs to 0
-	 integer i;
+     //sets all regs to 0
+    integer i;
     initial begin 
        for (i = 0; i < 32; i=i+1) begin
             regs[i] = 4;
@@ -74,38 +74,38 @@ module execute_unit(
 /*
 		for output
 */
-	 assign reg0 = regs[0];
-	 assign reg1 = regs[1];
-	 assign reg2 = regs[2];
-	 assign reg3 = regs[3];
-	 assign reg4 = regs[4];
-	 assign reg5 = regs[5];
-	 assign reg6 = regs[6];
-	 assign reg7 = regs[7];
-	 assign reg8 = regs[8];
-	 assign reg9 = regs[9];
-	 assign reg10 = regs[10];
-	 assign reg11 = regs[11];
-	 assign reg12 = regs[12];
-	 assign reg13 = regs[13];
-	 assign reg14 = regs[14];
-	 assign reg15 = regs[15];
-	 assign reg16 = regs[16];
-	 assign reg17 = regs[17];
-	 assign reg18 = regs[18];
-	 assign reg19 = regs[19];
-	 assign reg20 = regs[20];
-	 assign reg21 = regs[21];
-	 assign reg22 = regs[22];
-	 assign reg23 = regs[23];
-	 assign reg24 = regs[24];
-	 assign reg25 = regs[25];
-	 assign reg26 = regs[26];
-	 assign reg27 = regs[27];
-	 assign reg28 = regs[28];
-	 assign reg29 = regs[29];
-	 assign reg30 = regs[30];
-	 assign reg31 = regs[31];	 
+    assign reg0 = regs[0];
+    assign reg1 = regs[1];
+    assign reg2 = regs[2];
+    assign reg3 = regs[3];
+    assign reg4 = regs[4];
+    assign reg5 = regs[5];
+    assign reg6 = regs[6];
+    assign reg7 = regs[7];
+    assign reg8 = regs[8];
+    assign reg9 = regs[9];
+    assign reg10 = regs[10];
+    assign reg11 = regs[11];
+    assign reg12 = regs[12];
+    assign reg13 = regs[13];
+    assign reg14 = regs[14];
+    assign reg15 = regs[15];
+    assign reg16 = regs[16];
+    assign reg17 = regs[17];
+    assign reg18 = regs[18];
+    assign reg19 = regs[19];
+    assign reg20 = regs[20];
+    assign reg21 = regs[21];
+    assign reg22 = regs[22];
+    assign reg23 = regs[23];
+    assign reg24 = regs[24];
+    assign reg25 = regs[25];
+    assign reg26 = regs[26];
+    assign reg27 = regs[27];
+    assign reg28 = regs[28];
+    assign reg29 = regs[29];
+    assign reg30 = regs[30];
+    assign reg31 = regs[31];	 
 //---------------------------------------------------------------------
     
 /*
