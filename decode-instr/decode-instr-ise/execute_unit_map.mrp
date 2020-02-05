@@ -9,7 +9,7 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Feb  5 18:04:34 2020
+Mapped Date    : Wed Feb  5 18:15:39 2020
 ERROR:Pack:18 - The design is too large for the given device and package. 
    Please check the Design Summary section to see which resource requirement for
    your design exceeds the resources available in the device.
@@ -106,7 +106,6 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net A/alu_ctr_reg_not0001 is
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network rst has no load.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs

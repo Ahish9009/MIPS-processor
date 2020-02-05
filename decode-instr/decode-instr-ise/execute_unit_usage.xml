@@ -4,35 +4,35 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="13">
-<DesignStatistics TimeStamp="Wed Feb  5 18:04:38 2020"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="13">
+<DeviceUsageSummary rev="14">
+<DesignStatistics TimeStamp="Wed Feb  5 18:15:42 2020"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="14">
 <attrib name="value" value="1121"/></item>
-<item name="AGG_IO" rev="13">
+<item name="AGG_IO" rev="14">
 <attrib name="value" value="1121"/></item>
-<item name="AGG_SLICE" rev="13">
+<item name="AGG_SLICE" rev="14">
 <attrib name="value" value="1406"/></item>
-<item name="NUM_4_INPUT_LUT" rev="13">
+<item name="NUM_4_INPUT_LUT" rev="14">
 <attrib name="value" value="1807"/></item>
-<item name="NUM_BONDED_IBUF" rev="13">
+<item name="NUM_BONDED_IBUF" rev="14">
 <attrib name="value" value="33"/></item>
-<item name="NUM_BONDED_IOB" rev="13">
+<item name="NUM_BONDED_IOB" rev="14">
 <attrib name="value" value="1088"/></item>
-<item name="NUM_BUFGMUX" rev="13">
+<item name="NUM_BUFGMUX" rev="14">
 <attrib name="value" value="1"/></item>
-<item name="NUM_CYMUX" rev="13">
+<item name="NUM_CYMUX" rev="14">
 <attrib name="value" value="108"/></item>
-<item name="NUM_MULT18X18SIO" rev="13">
+<item name="NUM_MULT18X18SIO" rev="14">
 <attrib name="value" value="3"/></item>
-<item name="NUM_SLICEL" rev="13">
+<item name="NUM_SLICEL" rev="14">
 <attrib name="value" value="1148"/></item>
-<item name="NUM_SLICEM" rev="13">
+<item name="NUM_SLICEM" rev="14">
 <attrib name="value" value="258"/></item>
-<item name="NUM_SLICE_FF" rev="13">
+<item name="NUM_SLICE_FF" rev="14">
 <attrib name="value" value="1024"/></item>
-<item name="NUM_SLICE_LATCH" rev="13">
+<item name="NUM_SLICE_LATCH" rev="14">
 <attrib name="value" value="4"/></item>
-<item name="NUM_XOR" rev="13">
+<item name="NUM_XOR" rev="14">
 <attrib name="value" value="30"/></item>
 </group>
 </DesignStatistics>

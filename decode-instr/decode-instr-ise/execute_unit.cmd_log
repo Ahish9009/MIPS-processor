@@ -69,3 +69,6 @@ xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/exe
 xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_unit.xst" -ofn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_unit.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 execute_unit.ngc execute_unit.ngd  
 map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o execute_unit_map.ncd execute_unit.ngd execute_unit.pcf 
+xst -intstyle ise -ifn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_unit.xst" -ofn "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_unit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 execute_unit.ngc execute_unit.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o execute_unit_map.ncd execute_unit.ngd execute_unit.pcf 

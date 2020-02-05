@@ -154,6 +154,5 @@ module execute_unit(
     mux2x1_32 M2(alu_src, busB, imm32, alu_in2);
     alu ALU1(alu_ctr, busA, alu_in2, busW, v, c_out, zero); //output rooted directly to busW as data memory has not been made yet
 //---------------------------------------------------------------------    
-
-    
 endmodule
+
