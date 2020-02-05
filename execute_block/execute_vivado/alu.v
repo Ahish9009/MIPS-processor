@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // ----------------------------------
 // |operation Code |   Operation    |
 // |     0000      |      Add       |

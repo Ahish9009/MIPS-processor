@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../alu.v" \
+"../../../../decode_instr.v" \
+"../../../../extender.v" \
+"../../../../mux2x1_32.v" \
+"../../../../mux2x1_5.v" \
+"../../../../execute_unit.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

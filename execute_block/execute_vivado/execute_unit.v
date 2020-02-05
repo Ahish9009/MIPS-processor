@@ -66,7 +66,7 @@ module execute_unit(
 	 integer i;
     initial begin 
        for (i = 0; i < 32; i=i+1) begin
-            regs[i] = 4;
+            regs[i] = 4; //initialized to 4 for now
        end
     end
 //---------------------------------------------------------------------
@@ -115,7 +115,7 @@ module execute_unit(
     wire reg_dst, reg_write, mem_read, mem_write, jump, branch, sign_ext, alu_src;
     wire [3:0] alu_ctr;
     wire [4:0] rs, rt, rd;
-    decode_instr A(instr, imm16, reg_dst, reg_write, mem_read, mem_write, jump, branch, sign_ext, alu_src, alu_ctr, rs, rt, rd);
+    decode_instr INSTR_DEC(instr, imm16, reg_dst, reg_write, mem_read, mem_write, jump, branch, sign_ext, alu_src, alu_ctr, rs, rt, rd);
 //---------------------------------------------------------------------
 	 
 /*
@@ -127,7 +127,7 @@ module execute_unit(
  	 assign ra = rs;
 	 assign rb = rt;
 	 //gets the register where write will take place
-    mux2x1_5 M1(reg_dst, rt, rd, rw);
+    mux2x1_5 MUX1(reg_dst, rt, rd, rw);
 	 //loads the values onto the buses
 	 assign busA = regs[ra];
     assign busB = regs[rb];
@@ -143,7 +143,7 @@ module execute_unit(
 		sign extender
 */
     wire [31:0] imm32;
-    extender EXT(sign_ext, imm16, imm32);
+    extender SIGN_EXT(sign_ext, imm16, imm32);
 //---------------------------------------------------------------------
     
 /*
@@ -151,7 +151,7 @@ module execute_unit(
 */
     wire v, c_out, zero;
     wire [31:0] alu_in2;
-    mux2x1_32 M2(alu_src, busB, imm32, alu_in2);
+    mux2x1_32 MUX2(alu_src, busB, imm32, alu_in2);
     alu ALU1(alu_ctr, busA, alu_in2, busW, v, c_out, zero); //output rooted directly to busW as data memory has not been made yet
 //---------------------------------------------------------------------    
 endmodule

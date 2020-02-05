@@ -1,0 +1,454 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Feb  5 21:21:02 2020
+# Process ID: 2502
+# Current directory: /home/ahish/Sem-4/proc/execute_block
+# Command line: vivado
+# Log file: /home/ahish/Sem-4/proc/execute_block/vivado.log
+# Journal file: /home/ahish/Sem-4/proc/execute_block/vivado.jou
+#-----------------------------------------------------------
+CRITICAL WARNING: [Common 17-741] No write access right to the local Tcl store at '/home/ahish/.Xilinx/Vivado/2019.2/XilinxTclStore'. XilinxTclStore is reverted to the installation area. If you want to use local Tcl Store, please change the access right and relaunch Vivado.
+start_gui
+create_project execute_vivado /home/ahish/Sem-4/proc/execute_block/execute_vivado -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 6611.645 ; gain = 62.066 ; free physical = 1417 ; free virtual = 5154
+add_files -norecurse {/home/ahish/Sem-4/proc/execute_block/execute_vivado/mux2x1_5.v /home/ahish/Sem-4/proc/execute_block/execute_vivado/mux2x1_32.v /home/ahish/Sem-4/proc/execute_block/execute_vivado/decode_instr.v /home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v /home/ahish/Sem-4/proc/execute_block/execute_vivado/extender.v /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_unit.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'execute_unit' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj execute_unit_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder32bit
+INFO: [VRFC 10-311] analyzing module fulladder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/decode_instr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode_instr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/extender.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extender
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/mux2x1_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2x1_32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/mux2x1_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2x1_5
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module execute_unit
+INFO: [VRFC 10-2458] undeclared symbol reg28, assumed default net type wire [/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_unit.v:105]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_unit_behav xil_defaultlib.execute_unit xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_unit_behav xil_defaultlib.execute_unit xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 21. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 185. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 185. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decode_instr
+Compiling module xil_defaultlib.mux2x1_5
+Compiling module xil_defaultlib.extender
+Compiling module xil_defaultlib.mux2x1_32
+Compiling module xil_defaultlib.fulladder
+Compiling module xil_defaultlib.adder32bit
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.execute_unit
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot execute_unit_behav
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim/xsim.dir/execute_unit_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim/xsim.dir/execute_unit_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Feb  5 21:24:47 2020. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Feb  5 21:24:47 2020...
+run_program: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 6700.543 ; gain = 0.000 ; free physical = 1322 ; free virtual = 5150
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "execute_unit_behav -key {Behavioral:sim_1:Functional:execute_unit} -tclbatch {execute_unit.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source execute_unit.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+ERROR: [Wavedata 42-31] Couldn't write waveform viewer preferences file /home/ahish/.Xilinx/Vivado/2019.2/waveform/wv.ini: cannot open file.
+ERROR: [Wavedata 42-31] Couldn't write waveform viewer preferences file /home/ahish/.Xilinx/Vivado/2019.2/waveform/wv.ini: cannot open file.
+ERROR: [Wavedata 42-31] Couldn't write waveform viewer preferences file /home/ahish/.Xilinx/Vivado/2019.2/waveform/wv.ini: cannot open file.
+ERROR: [Common 17-39] 'add_wave' failed due to earlier errors.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'execute_unit_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 6799.230 ; gain = 98.688 ; free physical = 1276 ; free virtual = 5114
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 6799.230 ; gain = 0.000 ; free physical = 1294 ; free virtual = 5134
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'execute_unit' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj execute_unit_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_unit_behav xil_defaultlib.execute_unit xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_unit_behav xil_defaultlib.execute_unit xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "execute_unit_behav -key {Behavioral:sim_1:Functional:execute_unit} -tclbatch {execute_unit.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source execute_unit.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+ERROR: [Wavedata 42-31] Couldn't write waveform viewer preferences file /home/ahish/.Xilinx/Vivado/2019.2/waveform/wv.ini: cannot open file.
+ERROR: [Wavedata 42-31] Couldn't write waveform viewer preferences file /home/ahish/.Xilinx/Vivado/2019.2/waveform/wv.ini: cannot open file.
+ERROR: [Common 17-39] 'add_wave' failed due to earlier errors.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'execute_unit_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 6799.230 ; gain = 0.000 ; free physical = 1282 ; free virtual = 5122
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'execute_unit' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj execute_unit_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_unit_behav xil_defaultlib.execute_unit xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_unit_behav xil_defaultlib.execute_unit xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "execute_unit_behav -key {Behavioral:sim_1:Functional:execute_unit} -tclbatch {execute_unit.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source execute_unit.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'execute_unit_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 6804.230 ; gain = 5.000 ; free physical = 478 ; free virtual = 4731
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_tb.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'execute_tb4' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj execute_tb4_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module execute_tb4
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_tb4_behav xil_defaultlib.execute_tb4 xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto cf69534c6b8d41bf9872f3dbfc2a5aa1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_tb4_behav xil_defaultlib.execute_tb4 xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 21. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 185. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 185. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute_block/execute_vivado/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decode_instr
+Compiling module xil_defaultlib.mux2x1_5
+Compiling module xil_defaultlib.extender
+Compiling module xil_defaultlib.mux2x1_32
+Compiling module xil_defaultlib.fulladder
+Compiling module xil_defaultlib.adder32bit
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.execute_unit
+Compiling module xil_defaultlib.execute_tb4
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot execute_tb4_behav
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim/xsim.dir/execute_tb4_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim/xsim.dir/execute_tb4_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Feb  5 21:29:08 2020. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Feb  5 21:29:08 2020...
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 6806.238 ; gain = 0.000 ; free physical = 480 ; free virtual = 4735
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "execute_tb4_behav -key {Behavioral:sim_1:Functional:execute_tb4} -tclbatch {execute_tb4.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source execute_tb4.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'execute_tb4_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 6883.082 ; gain = 76.844 ; free physical = 479 ; free virtual = 4734
+launch_runs synth_1
+[Wed Feb  5 21:30:56 2020] Launched synth_1...
+Run output will be captured here: /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.runs/synth_1/runme.log
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: execute_unit
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+2 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 7353.348 ; gain = 365.449 ; free physical = 129 ; free virtual = 3408
+INFO: [Common 17-344] 'synth_design' was cancelled
+create_bd_design "design_1"
+Wrote  : </home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.srcs/sources_1/bd/design_1/design_1.bd> 
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.srcs/sources_1/bd/design_1/design_1.bd] -no_script -reset -force -quiet
+remove_files  /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.srcs/sources_1/bd/design_1/design_1.bd
+Wrote  : </home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+file delete -force /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.srcs/sources_1/bd/design_1
+reset_run synth_1
+launch_runs synth_1
+[Wed Feb  5 21:36:49 2020] Launched synth_1...
+Run output will be captured here: /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Wed Feb  5 21:39:14 2020] Launched synth_1...
+Run output will be captured here: /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Wed Feb  5 21:40:25 2020] Launched synth_1...
+Run output will be captured here: /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+[Wed Feb  5 21:43:33 2020] Launched synth_1...
+Run output will be captured here: /home/ahish/Sem-4/proc/execute_block/execute_vivado/execute_vivado.runs/synth_1/runme.log
+reset_run synth_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 7471.102 ; gain = 0.000 ; free physical = 1128 ; free virtual = 4320
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Feb  5 21:54:45 2020...
