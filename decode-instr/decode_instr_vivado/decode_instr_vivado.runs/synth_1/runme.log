@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log decode_instr.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source decode_instr.tcl
+    with args -log execute_unit.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source execute_unit.tcl
 
 
 ****** Vivado v2019.2 (64-bit)
@@ -9,48 +9,173 @@
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 CRITICAL WARNING: [Common 17-741] No write access right to the local Tcl store at '/home/ahish/.Xilinx/Vivado/2019.2/XilinxTclStore'. XilinxTclStore is reverted to the installation area. If you want to use local Tcl Store, please change the access right and relaunch Vivado.
-source decode_instr.tcl -notrace
-Command: synth_design -top decode_instr -part xc7z100ffg1156-1
+source execute_unit.tcl -notrace
+Command: synth_design -top execute_unit -part xc7z100ffg1156-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z100'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z100'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4068 
+INFO: Helper process launched with PID 2999 
+WARNING: [Synth 8-2611] redeclaration of ansi port busA is not allowed [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:38]
+WARNING: [Synth 8-1082] busA was previously declared with a range [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:38]
+WARNING: [Synth 8-2611] redeclaration of ansi port busB is not allowed [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:39]
+WARNING: [Synth 8-1082] busB was previously declared with a range [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:39]
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1754.777 ; gain = 215.625 ; free physical = 460 ; free virtual = 3697
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1757.871 ; gain = 218.594 ; free physical = 137 ; free virtual = 3661
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'execute_unit' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:23]
 INFO: [Synth 8-6157] synthesizing module 'decode_instr' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:21]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:87]
-WARNING: [Synth 8-3848] Net alu_src_reg in module/entity decode_instr does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:50]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:90]
+WARNING: [Synth 8-3848] Net rd in module/entity decode_instr does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:35]
 INFO: [Synth 8-6155] done synthesizing module 'decode_instr' (1#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:21]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port alu_src
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[25]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[24]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[23]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[22]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[21]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[20]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[19]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[18]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[17]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[16]
+WARNING: [Synth 8-689] width (6) of port connection 'rs' does not match port width (5) of module 'decode_instr' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:36]
+WARNING: [Synth 8-689] width (6) of port connection 'rt' does not match port width (5) of module 'decode_instr' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:36]
+WARNING: [Synth 8-689] width (6) of port connection 'rd' does not match port width (5) of module 'decode_instr' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:36]
+INFO: [Synth 8-6157] synthesizing module 'mux2x1_5' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/mux2x1_5.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'mux2x1_5' (2#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/mux2x1_5.v:22]
+WARNING: [Synth 8-689] width (6) of port connection 'a' does not match port width (5) of module 'mux2x1_5' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:41]
+WARNING: [Synth 8-689] width (6) of port connection 'b' does not match port width (5) of module 'mux2x1_5' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:41]
+WARNING: [Synth 8-689] width (6) of port connection 'out' does not match port width (5) of module 'mux2x1_5' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:41]
+INFO: [Synth 8-6157] synthesizing module 'registers' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:23]
+WARNING: [Synth 8-3848] Net regs[31] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[30] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[29] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[28] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[27] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[26] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[25] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[24] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[23] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[22] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[21] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[20] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[19] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[18] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[17] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[16] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[15] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[14] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[13] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[12] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[11] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[10] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[9] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[8] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[7] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[6] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[5] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[4] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[3] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[2] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[1] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+WARNING: [Synth 8-3848] Net regs[0] in module/entity registers does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'registers' (3#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/registers.v:23]
+WARNING: [Synth 8-689] width (6) of port connection 'ra' does not match port width (5) of module 'registers' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:42]
+WARNING: [Synth 8-689] width (6) of port connection 'rb' does not match port width (5) of module 'registers' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:42]
+WARNING: [Synth 8-689] width (6) of port connection 'rw' does not match port width (5) of module 'registers' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:42]
+WARNING: [Synth 8-689] width (32) of port connection 'busA' does not match port width (1) of module 'registers' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:42]
+WARNING: [Synth 8-689] width (32) of port connection 'busB' does not match port width (1) of module 'registers' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:42]
+INFO: [Synth 8-6157] synthesizing module 'extender' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/extender.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'extender' (4#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/extender.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2x1_32' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/mux2x1_32.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux2x1_32' (5#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/mux2x1_32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:21]
+INFO: [Synth 8-6157] synthesizing module 'adder32bit' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:185]
+INFO: [Synth 8-6157] synthesizing module 'fulladder' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:233]
+INFO: [Synth 8-6155] done synthesizing module 'fulladder' (6#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:233]
+INFO: [Synth 8-6155] done synthesizing module 'adder32bit' (7#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:185]
+WARNING: [Synth 8-7023] instance 'add' of module 'adder32bit' has 7 connections declared, but only 6 given [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:45]
+WARNING: [Synth 8-7023] instance 'sub' of module 'adder32bit' has 7 connections declared, but only 6 given [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (8#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:21]
+WARNING: [Synth 8-3848] Net reg_rst in module/entity execute_unit does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:42]
+WARNING: [Synth 8-3848] Net ra in module/entity execute_unit does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:39]
+WARNING: [Synth 8-3848] Net rb in module/entity execute_unit does not have driver. [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'execute_unit' (9#1) [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.srcs/sources_1/new/execute_unit.v:23]
+WARNING: [Synth 8-3917] design execute_unit has port busA[31] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[30] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[29] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[28] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[27] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[26] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[25] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[24] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[23] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[22] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[21] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[20] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[19] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[18] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[17] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[16] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[15] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[14] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[13] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[12] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[11] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[10] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[9] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[8] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[7] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[6] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[5] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[4] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[3] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[2] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[1] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[31] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[30] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[29] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[28] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[27] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[26] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[25] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[24] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[23] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[22] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[21] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[20] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[19] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[18] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[17] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[16] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[15] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[14] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[13] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[12] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[11] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[10] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[9] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[8] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[7] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[6] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[5] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[4] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[3] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[2] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[1] driven by constant 0
+WARNING: [Synth 8-3331] design registers has unconnected port reg_dst
+WARNING: [Synth 8-3331] design decode_instr has unconnected port rd[4]
+WARNING: [Synth 8-3331] design decode_instr has unconnected port rd[3]
+WARNING: [Synth 8-3331] design decode_instr has unconnected port rd[2]
+WARNING: [Synth 8-3331] design decode_instr has unconnected port rd[1]
+WARNING: [Synth 8-3331] design decode_instr has unconnected port rd[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1816.527 ; gain = 277.375 ; free physical = 495 ; free virtual = 3733
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1797.746 ; gain = 258.469 ; free physical = 205 ; free virtual = 3699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1816.527 ; gain = 277.375 ; free physical = 490 ; free virtual = 3728
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1813.590 ; gain = 274.312 ; free physical = 190 ; free virtual = 3685
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z100ffg1156-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1821.594 ; gain = 282.316 ; free physical = 190 ; free virtual = 3685
+---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z100ffg1156-1
+WARNING: [Synth 8-327] inferring latch for variable 'alu_ctr_reg_reg' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:55]
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1824.531 ; gain = 285.379 ; free physical = 490 ; free virtual = 3727
----------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'alu_ctr_reg_reg' [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr.v:53]
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1841.445 ; gain = 302.293 ; free physical = 478 ; free virtual = 3716
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1837.609 ; gain = 298.332 ; free physical = 160 ; free virtual = 3655
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -63,12 +188,22 @@ No constraint files found.
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 130   
++---Registers : 
+	               32 Bit    Registers := 32    
++---Multipliers : 
+	                32x32  Multipliers := 1     
 +---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 38    
 	   4 Input      1 Bit        Muxes := 1     
 	   7 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -84,6 +219,36 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 6     
 	   4 Input      1 Bit        Muxes := 1     
 	   7 Input      1 Bit        Muxes := 1     
+Module mux2x1_5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module registers 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 32    
+Module mux2x1_32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module fulladder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+Module adder32bit 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module alu 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	  16 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -101,19 +266,54 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design decode_instr has unconnected port alu_src
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[25]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[24]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[23]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[22]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[21]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[20]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[19]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[18]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[17]
-WARNING: [Synth 8-3331] design decode_instr has unconnected port instr[16]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/alu.v:72]
+WARNING: [Synth 8-3917] design execute_unit has port busA[31] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[30] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[29] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[28] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[27] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[26] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[25] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[24] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[23] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[22] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[21] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[20] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[19] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[18] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[17] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[16] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[15] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[14] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[13] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[12] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[11] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[10] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[9] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[8] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[7] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[6] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[5] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[4] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[3] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[2] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busA[1] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[31] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[30] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[29] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[28] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[27] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[26] driven by constant 0
+WARNING: [Synth 8-3917] design execute_unit has port busB[25] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design registers has unconnected port reg_dst
+WARNING: [Synth 8-3331] design execute_unit has unconnected port instr[25]
+WARNING: [Synth 8-3331] design execute_unit has unconnected port instr[24]
+WARNING: [Synth 8-3331] design execute_unit has unconnected port instr[23]
+WARNING: [Synth 8-3331] design execute_unit has unconnected port instr[22]
+WARNING: [Synth 8-3331] design execute_unit has unconnected port instr[21]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 185 ; free virtual = 3424
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 131 ; free virtual = 3506
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -126,7 +326,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 131 ; free virtual = 3506
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -138,7 +338,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 130 ; free virtual = 3505
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -162,13 +362,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 125 ; free virtual = 3500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 127 ; free virtual = 3501
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -187,25 +387,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 127 ; free virtual = 3501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 127 ; free virtual = 3501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 127 ; free virtual = 3501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 127 ; free virtual = 3501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -218,49 +418,53 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |LUT3  |     1|
-|2     |LUT4  |     2|
-|3     |LUT5  |     5|
-|4     |LUT6  |    10|
-|5     |LD    |     4|
-|6     |IBUF  |    22|
-|7     |OBUF  |    27|
-|8     |OBUFT |     1|
-+------+------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     7|
+|2     |LUT2   |     2|
+|3     |LUT3   |    24|
+|4     |LUT4   |     6|
+|5     |LUT5   |     4|
+|6     |LUT6   |    67|
+|7     |MUXF7  |     1|
+|8     |LD     |     4|
+|9     |IBUF   |    22|
+|10    |OBUF   |    96|
++------+-------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |    72|
-+------+---------+-------+------+
++------+---------+-------------+------+
+|      |Instance |Module       |Cells |
++------+---------+-------------+------+
+|1     |top      |             |   233|
+|2     |  A      |decode_instr |    42|
+|3     |  ALU1   |alu          |    44|
++------+---------+-------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 183 ; free virtual = 3423
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 127 ; free virtual = 3501
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.539 ; gain = 517.387 ; free physical = 185 ; free virtual = 3425
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2056.547 ; gain = 517.387 ; free physical = 185 ; free virtual = 3425
+Synthesis finished with 0 errors, 0 critical warnings and 190 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.617 ; gain = 521.340 ; free physical = 129 ; free virtual = 3503
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2060.625 ; gain = 521.340 ; free physical = 129 ; free virtual = 3503
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2064.477 ; gain = 0.000 ; free physical = 250 ; free virtual = 3490
-INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2072.523 ; gain = 0.000 ; free physical = 196 ; free virtual = 3570
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2164.141 ; gain = 0.000 ; free physical = 157 ; free virtual = 3397
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2167.219 ; gain = 0.000 ; free physical = 110 ; free virtual = 3484
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   LD => LDCE: 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-12 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+30 Infos, 166 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 2164.141 ; gain = 655.805 ; free physical = 290 ; free virtual = 3529
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2164.141 ; gain = 0.000 ; free physical = 290 ; free virtual = 3529
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 2167.219 ; gain = 658.758 ; free physical = 243 ; free virtual = 3617
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2167.219 ; gain = 0.000 ; free physical = 243 ; free virtual = 3617
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.runs/synth_1/decode_instr.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file decode_instr_utilization_synth.rpt -pb decode_instr_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Feb  5 11:11:34 2020...
+INFO: [Common 17-1381] The checkpoint '/home/ahish/Sem-4/proc/decode-instr/decode_instr_vivado/decode_instr_vivado.runs/synth_1/execute_unit.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file execute_unit_utilization_synth.rpt -pb execute_unit_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Feb  5 13:30:53 2020...

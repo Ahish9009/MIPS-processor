@@ -1,0 +1,8 @@
+verilog isim_temp "../decode_instr_vivado/decode_instr.v"
+verilog isim_temp "registers.v"
+verilog isim_temp "mux2x1_5.v"
+verilog isim_temp "mux2x1_32.v"
+verilog isim_temp "extender.v"
+verilog isim_temp "execute_unit.v"
+verilog isim_temp "execute_tb.v"
+verilog isim_temp "/opt/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

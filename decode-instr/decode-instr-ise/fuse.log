@@ -1,0 +1,36 @@
+Running: /opt/Xilinx/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_tb4_isim_beh.exe -prj /home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_tb4_beh.prj work.execute_tb4 work.glbl 
+ISim O.87xd (signature 0x8ddf5b5d)
+Number of CPUs detected in this system: 3
+Turning on mult-threading, number of parallel sub-compilation jobs: 6 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/../decode_instr_vivado/decode_instr.v" into library work
+Analyzing Verilog file "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/../decode_instr_vivado/alu.v" into library work
+Analyzing Verilog file "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/mux2x1_5.v" into library work
+Analyzing Verilog file "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/mux2x1_32.v" into library work
+Analyzing Verilog file "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/extender.v" into library work
+Analyzing Verilog file "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_unit.v" into library work
+Analyzing Verilog file "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_tb4.v" into library work
+Analyzing Verilog file "/opt/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/../decode_instr_vivado/alu.v" Line 45: Port c_out2 is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/../decode_instr_vivado/alu.v" Line 46: Port c_out2 is not connected to this instance
+Completed static elaboration
+Fuse Memory Usage: 95180 KB
+Fuse CPU Usage: 890 ms
+Compiling module decode_instr
+Compiling module mux2x1_5
+Compiling module extender
+Compiling module mux2x1_32
+Compiling module fulladder
+Compiling module adder32bit
+Compiling module alu
+Compiling module execute_unit
+Compiling module execute_tb4
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 5 sub-compilation(s) to finish...
+Compiled 10 Verilog Units
+Built simulation executable /home/ahish/Sem-4/proc/decode-instr/decode-instr-ise/execute_tb4_isim_beh.exe
+Fuse Memory Usage: 524592 KB
+Fuse CPU Usage: 920 ms
+GCC CPU Usage: 720 ms

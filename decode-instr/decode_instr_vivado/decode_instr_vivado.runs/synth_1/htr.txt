@@ -6,4 +6,4 @@
 # Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log decode_instr.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source decode_instr.tcl
+vivado -log execute_unit.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source execute_unit.tcl

@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z100ffg1156-1" LaunchTime="1580881259">
-  <File Type="VDS-TIMINGSUMMARY" Name="decode_instr_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="decode_instr.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="decode_instr_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="decode_instr_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="decode_instr_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="decode_instr.vds"/>
-  <File Type="REPORTS-TCL" Name="decode_instr_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="decode_instr_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="decode_instr.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z100ffg1156-1" LaunchTime="1580889613">
+  <File Type="PA-TCL" Name="execute_unit.tcl"/>
+  <File Type="REPORTS-TCL" Name="execute_unit_reports.tcl"/>
+  <File Type="RDS-RDS" Name="execute_unit.vds"/>
+  <File Type="RDS-UTIL" Name="execute_unit_utilization_synth.rpt"/>
+  <File Type="RDS-DCP" Name="execute_unit.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="execute_unit_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/alu.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/decode_instr.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/extender.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux2x1_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux2x1_5.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -20,15 +45,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/registers.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/alu.v">
+    <File Path="$PSRCDIR/sources_1/new/execute_unit.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -36,7 +59,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="decode_instr"/>
+      <Option Name="TopModule" Val="execute_unit"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

@@ -1,0 +1,8 @@
+verilog work "../decode_instr_vivado/decode_instr.v"
+verilog work "../decode_instr_vivado/alu.v"
+verilog work "mux2x1_5.v"
+verilog work "mux2x1_32.v"
+verilog work "extender.v"
+verilog work "execute_unit.v"
+verilog work "execute_tb2.v"
+verilog work "/opt/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

@@ -23,7 +23,9 @@
 module execute_unit(
     input CLK,
     input [31:0] instr,
-    output [31:0] regs //have to show the full array here
+    output [31:0] busA, //have to show the full array here
+    output [31:0] busB,
+    output [31:0] busW
     );
     
     //for decoding instruction
@@ -35,7 +37,7 @@ module execute_unit(
     
     //for registers
     wire [5:0] rw, ra, rb;
-    wire [31:0] busA, busB, busW;
+//    wire [31:0] busA, busB, busW;
     mux2x1_5 M1(reg_dst, rt, rd, rw);
     registers R(CLK, reg_rst, reg_write, reg_dst, ra, rb, rw, busW, busA, busB);
     

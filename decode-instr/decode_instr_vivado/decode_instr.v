@@ -39,12 +39,11 @@ module decode_instr(
 	wire [4:0] shamt;
 //	wire [15:0] imm16;
 	wire [25:0] instr_index;
-	
-	
 	 
 	assign opcode = instr[31:26];
 	assign rs = instr[25:21];
  	assign rt = instr[20:16];
+	assign rd = instr[15:11];
 	assign shamt = instr[10:6];
 	assign funct = instr[5:0];
 	assign imm16 = instr[15:0];
@@ -60,13 +59,13 @@ module decode_instr(
 	assign mem_write = (opcode == 6'b101011) ? 1 : 0;
 	assign jump = (opcode == 6'b000010) ? 1 : 0;
 	assign branch = (opcode == 6'b000100) ? 1 : 0;	
-	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011) ? 1 : 0; 
+	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011) ? 1 : 0; 
 	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100) ? 0 : 1;
 	
 	always @(*) begin
 		
 		// if it is a R operation
-		if (opcode == 4'b000000) begin
+		if (opcode == 6'b000000) begin
 
 			//add
 			if (funct == 6'b100000 | funct == 6'b100001 | funct == 6'b100100) begin
