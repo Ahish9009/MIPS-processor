@@ -2,7 +2,7 @@
 // |operation Code |   Operation    |
 // |     0000      |      Add       |
 // |     0001      |    Subtract    |
-// |     0010      |LESS THAN SIGNED| (Was Multiplication)
+// |     0010      |    Multiply    |
 // |     0011      |Shift-R-Signed-R|
 // |     0100      |    Shift-L-RS  |
 // |     0101      |  Shift-L-SHAMT |
@@ -68,16 +68,9 @@ module alu(
 			end
 			
 			4'b0010:
-//			//multiplication
-//			begin
-//				temp_res = x*y;
-//				temp_v = 0;
-//				temp_c_out = 0;
-//			end
-
-            //LESS THAN SIGNED
+			//multiplication
 			begin
-				temp_res = $signed(x) < $signed(y);
+				temp_res = x*y;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
