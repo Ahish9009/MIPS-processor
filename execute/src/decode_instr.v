@@ -15,12 +15,19 @@
 // | 10 |     SRL       |  R   | 000000 | 000010  |
 // | 11 |     SRLV      |  R   | 000000 | 000110  |
 // | 12 |     SLL       |  R   | 000000 | 000000  |
+// | 13 |     SLTU      |  R   | 000000 | 101011  |
 
 
 // | 11 |     ADDI      |  I   | 001000 | 000000  |
 // | 11 |     ANDI      |  I   | 001100 | 000000  |
 // | 11 |     XORI      |  I   | 001110 | 000000  |
 // | 11 |     ORI       |  I   | 001101 | 000000  |
+// | 11 |     SLTI      |  I   | 001010 | 000000  |
+// | 11 |     SLTIU     |  I   | 001011 | 000000  |
+// | 11 |     BEQ       |  I   | 000100 | 000000  |
+// | 11 |     SLTIU     |  I   | 001011 | 000000  |
+
+
 
 
 
@@ -83,12 +90,12 @@ module decode_instr(
 	
 	// all these can be decided simply by opcode
 	assign reg_dst = (opcode == 6'b000000) ? 1 : 0; 
-	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 | opcode == 6'b001110 | opcode == 6'b001101 | opcode == 6'b10011) ? 1 : 0;
+	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 | opcode == 6'b001110 | opcode == 6'b001101 | opcode == 6'b001010 | opcode == 6'b001011) ? 1 : 0;
 	assign mem_read = (opcode == 6'b100011) ? 1 : 0;
 	assign mem_write = (opcode == 6'b101011) ? 1 : 0;
 	assign jump = (opcode == 6'b000010) ? 1 : 0;
 	assign branch = (opcode == 6'b000100) ? 1 : 0;	
-	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011) ? 1 : 0; 
+	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcde == 6'b000100) ? 1 : 0; 
 	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100) ? 0 : 1;
 	
 	always @(*) begin
@@ -120,8 +127,12 @@ module decode_instr(
 			if (funct == 6'b100110) begin // XOR                            
 				alu_ctr_reg = 4'b1101;
 			end
-			//less than
+			//less than signed
 			if (funct == 6'b101010) begin // SLT
+			    alu_ctr_reg = 4'b0010;
+			end
+			//less than unsigned
+			if (funct == 6'b101011) begin // SLTU
 			    alu_ctr_reg = 4'b0111;
 			end
 			//Shift-R-S-RS
@@ -178,6 +189,18 @@ module decode_instr(
 				6'b001101:
 				begin
 					alu_ctr_reg = 4'b1010; //or
+				end
+				
+				//SLTI
+				6'b001010:
+				begin
+					alu_ctr_reg = 4'b0010; //less than signed
+				end
+				
+				//SLTIU
+				6'b001011:
+				begin
+					alu_ctr_reg = 4'b0111; //less than unsigned
 				end
 				
 				//BEQ
