@@ -1,0 +1,11 @@
+0.6
+2019.2
+Nov  6 2019
+21:42:20
+/home/ahish/Sem-4/proc/execute/execute.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+/home/ahish/Sem-4/proc/execute/src/alu.v,1581921724,verilog,,/home/ahish/Sem-4/proc/execute/src/decode_instr.v,,adder32bit;alu;fulladder,,,,,,,,
+/home/ahish/Sem-4/proc/execute/src/decode_instr.v,1581921724,verilog,,/home/ahish/Sem-4/proc/execute/src/extender.v,,decode_instr,,,,,,,,
+/home/ahish/Sem-4/proc/execute/src/execute_unit.v,1581921724,verilog,,,,execute_unit,,,,,,,,
+/home/ahish/Sem-4/proc/execute/src/extender.v,1581921724,verilog,,/home/ahish/Sem-4/proc/execute/src/mux2x1_32.v,,extender,,,,,,,,
+/home/ahish/Sem-4/proc/execute/src/mux2x1_32.v,1581921724,verilog,,/home/ahish/Sem-4/proc/execute/src/mux2x1_5.v,,mux2x1_32,,,,,,,,
+/home/ahish/Sem-4/proc/execute/src/mux2x1_5.v,1581921724,verilog,,/home/ahish/Sem-4/proc/execute/src/execute_unit.v,,mux2x1_5,,,,,,,,
