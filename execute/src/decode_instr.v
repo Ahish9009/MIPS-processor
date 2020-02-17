@@ -15,12 +15,15 @@
 // | 10 |     SRL       |  R   | 000000 | 000010  |
 // | 11 |     SRLV      |  R   | 000000 | 000110  |
 // | 12 |     SLL       |  R   | 000000 | 000000  |
+// | 13 |     SLTU      |  R   | 000000 | 101011  |
 
 
 // | 11 |     ADDI      |  I   | 001000 | 000000  |
 // | 11 |     ANDI      |  I   | 001100 | 000000  |
 // | 11 |     XORI      |  I   | 001110 | 000000  |
 // | 11 |     ORI       |  I   | 001101 | 000000  |
+// | 11 |     SLTI      |  I   | 001010 | 000000  |
+// | 11 |     SLTIU     |  I   | 001011 | 000000  |
 
 
 
@@ -88,7 +91,7 @@ module decode_instr(
 	assign mem_write = (opcode == 6'b101011) ? 1 : 0;
 	assign jump = (opcode == 6'b000010) ? 1 : 0;
 	assign branch = (opcode == 6'b000100) ? 1 : 0;	
-	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011) ? 1 : 0; 
+	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011) ? 1 : 0; 
 	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100) ? 0 : 1;
 	
 	always @(*) begin
@@ -122,8 +125,13 @@ module decode_instr(
 			end
 			//less than
 			if (funct == 6'b101010) begin // SLT
+			    alu_ctr_reg = 4'b0010;
+			end
+			//less than unsigned
+			if (funct == 6'b101011) begin // SLTU
 			    alu_ctr_reg = 4'b0111;
 			end
+			
 			//Shift-R-S-RS
 			if (funct == 6'b000111) begin // SRAV
 			    alu_ctr_reg = 4'b0011;
@@ -148,8 +156,6 @@ module decode_instr(
 			if (funct == 6'b000000) begin // SLL
 			    alu_ctr_reg = 4'b0101;
 			end
-			
-			//Shift-L-SHAMT
 			
 		end
 		// if it is an I operation
@@ -179,6 +185,19 @@ module decode_instr(
 				begin
 					alu_ctr_reg = 4'b1010; //or
 				end
+				
+				//SLTI
+				6'b001010:
+				begin 
+				    alu_ctr_reg = 4'b0010; //less than
+				end
+				
+				//SLTIU
+				6'b001011:
+				begin 
+				    alu_ctr_reg = 4'b0111; //less than
+				end
+				
 				
 				//BEQ
 				6'b000100:
