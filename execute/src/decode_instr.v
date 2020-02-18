@@ -25,9 +25,10 @@
 // | 11 |     SLTI      |  I   | 001010 | 000000  |
 // | 11 |     SLTIU     |  I   | 001011 | 000000  |
 // | 11 |     BEQ       |  I   | 000100 | 000000  |
-// | 11 |     BGEZ      |  I   | 000001 | 000000  | (not implemented yet)
+// | 11 |     BGEZ      |  I   | 000001 | 000000  | 
 // | 11 |     BGTZ      |  I   | 000111 | 000000  |
 // | 11 |     BLEZ      |  I   | 000110 | 000000  |
+// | 11 |     BNE       |  I   | 000101 | 000000  |
 
 
 
@@ -80,8 +81,8 @@ module decode_instr(
 	 
 	assign opcode = instr[31:26];
 	assign rs = instr[25:21];
-// 	assign rt = (opcode == 6'b000001 ) ? 5'b0 : instr[20:16];
- 	assign rt = instr[20:16];
+	assign rt = (opcode == 6'b000001) ? 5'b0 : instr[20:16];
+         //assign rt = instr[20:16];
 	assign rd = instr[15:11];
 	assign shamt = instr[10:6];
 	assign funct = instr[5:0];
@@ -98,9 +99,9 @@ module decode_instr(
 	assign mem_read = (opcode == 6'b100011) ? 1 : 0;
 	assign mem_write = (opcode == 6'b101011) ? 1 : 0;
 	assign jump = (opcode == 6'b000010) ? 1 : 0;
-	assign branch = (opcode == 6'b000100) ? 1 : 0;	
-	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 000001 | opcode == 000111 | opcode == 000110) ? 1 : 0; 
-	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110) ? 0 : 1;
+	assign branch = (opcode == 6'b000100 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 1 : 0; 
+	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 000001 | opcode == 000111 | opcode == 000110 | opcode == 000101) ? 1 : 0; 
+	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 0 : 1;
 	
 	always @(*) begin
 		
@@ -227,6 +228,12 @@ module decode_instr(
 				6'b000110:
 				begin
 					alu_ctr_reg = 5'b10000; //Less than equal signed
+				end
+
+				//BNE
+				6'b000101:
+				begin
+					alu_ctr_reg = 5'b10010; //Less than equal signed
 				end
 				
 				//LW
