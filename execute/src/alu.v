@@ -1,25 +1,28 @@
-// ----------------------------------
-// |operation Code |   Operation    |
-// |     0000      |      Add       |
-// |     0001      |    Subtract    |
-// |     0010      |Less Than Signed|
-// |     0011      |Shift-R-Signed-R|
-// |     0100      |    Shift-L-RS  |
-// |     0101      |  Shift-L-SHAMT |
-// |     0110      |  GREATER THAN  |
-// |     0111      |    LESS THAN   |
-// |     1000      |    EQUAL TO    |
-// |     1001      |      AND       |
-// |     1010      |       OR       |
-// |     1011      |Shift-R-Signed-S|
-// |     1100      |      NOR       |
-// |     1101      |      XOR       |
-// |     1110      | Shift-R-US-RS  |
-// |     1111      |Shift-R-US-SHAMT|
-// ----------------------------------
+// |-------------------------------------|
+// | operation Code |   Operation        |
+// |     00000      |        +           | ADD
+// |     00001      |        -           | SUBTRACT
+// |     00010      |      <(US)         | LESS THAN UNSIGNED
+// |     00011      |Shift-R-Signed-R    |
+// |     00100      |    Shift-L-RS      |
+// |     00101      |  Shift-L-SHAMT     | 
+// |     00110      |        >(S)        | GREATED THAN SIGNED
+// |     00111      |        <(S)        | LESS THAN SIGNED
+// |     01000      |        =           | EQUAL TO
+// |     01001      |        &           | AND
+// |     01010      |        |           | OR
+// |     01011      |Shift-R-Signed-S    |
+// |     01100      |      NOR           |
+// |     01101      |      XOR           |
+// |     01110      |   Shift-R-US-RS    |
+// |     01111      |  Shift-R-US-SHAMT  |
+// |     10000      |      <=(S)         | LESS THAN EQUAL SIGNED
+// |     10001      |      >=(S)         | GREATER THAN EQUAL SIGNED
+// |     10010      |       !=           |  NOT EQUAL TO
+// |-------------------------------------|
 
 module alu(
-	input [3:0] opselect,
+	input [4:0] opselect,
 	input [31:0] x,
 	input [31:0] y,
 	input [4:0] shamt,
@@ -51,7 +54,7 @@ module alu(
 	begin 
 		case(opselect)
 		
-			4'b0000: 
+			5'b00000: 
 			//add
 			begin
 				temp_res = sum;
@@ -59,7 +62,7 @@ module alu(
 				temp_c_out = c_out_add;
 			end
 				
-			4'b0001: 
+			5'b00001: 
 			//subtract
 			begin
 				temp_res = diff;
@@ -67,7 +70,7 @@ module alu(
 				temp_c_out = c_out_sub;
 			end
 			
-			4'b0010:
+			5'b00010:
 //			//multiplication
 //			begin
 //				temp_res = x*y;
@@ -75,14 +78,14 @@ module alu(
 //				temp_c_out = 0;
 //			end
 
-			//Less than signed
+			//Less than unsigned
 			begin
-				temp_res = $signed(x) < $signed(y);
+				temp_res = x < y;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
 			
-			4'b0011:
+			5'b00011:
 			//Shift-R-Signed-Rs
 			begin
 				temp_res = x >>> y;
@@ -90,7 +93,7 @@ module alu(
 				temp_c_out = 0;
 			end
 				
-			4'b0100: 
+			4'b00100: 
 			//left shift by SHAMT
 			begin
 				temp_res = x << shamt;
@@ -98,7 +101,7 @@ module alu(
 				temp_c_out = 0;
 			end
 			
-			4'b0101: 
+			5'b00101: 
 			//left shift by RS
 			begin
 				temp_res = x << y;
@@ -106,23 +109,23 @@ module alu(
 				temp_c_out = 0;
 			end
 				
-			4'b0110: 
-			//greater than
+			5'b00110: 
+			//greater than signed
 			begin
-				temp_res = (x>y)?32'b1:32'b0;
+				temp_res = ($signed(x) > $signed(y))?32'b1:32'b0;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
 				
-			4'b0111: 
-			//less than unsigned
+			5'b00111: 
+			//less than signed
 			begin
-				temp_res = (x<y)?32'b1:32'b0;
+				temp_res = ($signed(x) < $signed(y)) ? 1 : 0;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
 			
-			4'b1000: 
+			5'b01000: 
 			//equal to
 			begin
 				temp_res = (x==y)?32'b1:32'b0;
@@ -130,7 +133,7 @@ module alu(
 				temp_c_out = 0;
 			end
 			
-			4'b1001: 
+			5'b01001: 
 			//logical AND
 			begin
 				temp_res = x & y;
@@ -138,7 +141,7 @@ module alu(
 				temp_c_out = 0;
 			end
 				
-			4'b1010: 
+			5'b01010: 
 			//logical OR
 			begin
 				temp_res = x | y;
@@ -146,7 +149,7 @@ module alu(
 				temp_c_out = 0;
 			end
 			
-			4'b1011: 
+			5'b01011: 
 			//Shift-R-Signed-Shamt
 			begin
 				temp_res = x >>> shamt;
@@ -154,7 +157,7 @@ module alu(
 				temp_c_out = 0;
 			end
 			
-			4'b1100: 
+			5'b01100: 
 			//logical NOR
 			begin
 				temp_res = ~(x|y);
@@ -162,7 +165,7 @@ module alu(
 				temp_c_out = 0;
 			end
 				
-			4'b1101: 
+			5'b01101: 
 			//logical XOR
 			begin
 				temp_res = x^y;
@@ -170,7 +173,7 @@ module alu(
 				temp_c_out = 0;
 			end
 			
-			4'b1110: 
+			5'b01110: 
 			//shift right by RS
 			begin
 				temp_res = x >> y;
@@ -178,7 +181,7 @@ module alu(
 				temp_c_out = 0;
 			end
 			
-			4'b1111: 
+			5'b01111: 
 			//shift right by SHAMT
 			begin
 				temp_res = x >> shamt;

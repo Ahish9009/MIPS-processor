@@ -114,7 +114,7 @@ module execute_unit(
     wire [25:0] instr_index;
     wire [15:0] imm16;
     wire reg_dst, reg_write, mem_read, mem_write, jump, branch, sign_ext, alu_src;
-    wire [3:0] alu_ctr;
+    wire [4:0] alu_ctr;
     wire [4:0] rs, rt, rd, shamt;
     decode_instr A(instr, shamt, instr_index, imm16, reg_dst, reg_write, mem_read, mem_write, jump, branch, sign_ext, alu_src, alu_ctr, rs, rt, rd);
 //---------------------------------------------------------------------
