@@ -17,21 +17,23 @@
 // | 12 |     SLL       |  R   | 000000 | 000000  |
 // | 13 |     SLTU      |  R   | 000000 | 101011  |
 
-
-// | 11 |     ADDI      |  I   | 001000 | 000000  |
-// | 11 |     ANDI      |  I   | 001100 | 000000  |
-// | 11 |     XORI      |  I   | 001110 | 000000  |
-// | 11 |     ORI       |  I   | 001101 | 000000  |
-// | 11 |     SLTI      |  I   | 001010 | 000000  |
-// | 11 |     SLTIU     |  I   | 001011 | 000000  |
-// | 11 |     BEQ       |  I   | 000100 | 000000  |
-// | 11 |     BGEZ      |  I   | 000001 | 000000  | 
-// | 11 |     BGTZ      |  I   | 000111 | 000000  |
-// | 11 |     BLEZ      |  I   | 000110 | 000000  |
-// | 11 |     BNE       |  I   | 000101 | 000000  |
-
-
-
+// | 14 |     ADDI      |  I   | 001000 | 000000  |
+// | 15 |     ANDI      |  I   | 001100 | 000000  |
+// | 16 |     XORI      |  I   | 001110 | 000000  |
+// | 17 |     ORI       |  I   | 001101 | 000000  |
+// | 18 |     SLTI      |  I   | 001010 | 000000  |
+// | 19 |     SLTIU     |  I   | 001011 | 000000  |
+// | 20 |     BEQ       |  I   | 000100 | 000000  |
+// | 21 |     BGEZ      |  I   | 000001 | 000000  | 
+// | 22 |     BGTZ      |  I   | 000111 | 000000  |
+// | 23 |     BLEZ      |  I   | 000110 | 000000  |
+// | 24 |     BNE       |  I   | 000101 | 000000  |
+// | 25 |     LB        |  I   | 100000 | 000000  |
+// | 26 |     SB        |  I   | 101000 | 000000  |
+//
+// | 27 |     J         |  J   | 000010 | 000000  |
+// | 28 |     JAL       |  J   | 000011 | 000000  | (Not implemented yet)
+// |----------------------------------------------|
 
 
 `timescale 1ns / 1ps
@@ -95,12 +97,14 @@ module decode_instr(
 	
 	// all these can be decided simply by opcode
 	assign reg_dst = (opcode == 6'b000000) ? 1 : 0; 
-	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 | opcode == 6'b001110 | opcode == 6'b001101 | opcode == 6'b001010 | opcode == 6'b001011) ? 1 : 0;
-	assign mem_read = (opcode == 6'b100011) ? 1 : 0;
-	assign mem_write = (opcode == 6'b101011) ? 1 : 0;
+	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 | opcode == 6'b001110 | opcode == 6'b001101 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b100000) ? 1 : 0;
+	assign mem_read = (opcode == 6'b100011 | opcode == 6'b100000) ? 1 : 0;
+	assign mem_write = (opcode == 6'b101011 | opcode == 6'b101000) ? 1 : 0;
 	assign jump = (opcode == 6'b000010) ? 1 : 0;
+
 	assign branch = (opcode == 6'b000100 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 1 : 0; 
-	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 000001 | opcode == 000111 | opcode == 000110 | opcode == 000101) ? 1 : 0; 
+
+	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101 | opcode == 6'b100000 | opcode == 6'b101000) ? 1 : 0; 
 	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 0 : 1;
 	
 	always @(*) begin
@@ -166,7 +170,7 @@ module decode_instr(
 			end
 			
 		end
-		// if it is an I operation
+		// if it is an I or J operation
 		else begin
 			case(opcode) 
 				
@@ -236,17 +240,36 @@ module decode_instr(
 					alu_ctr_reg = 5'b10010; //Less than equal signed
 				end
 				
-				//LW
-				6'b100011:
+				//LB
+				6'b100000:
 				begin
 					alu_ctr_reg = 5'b00000; //add
 				end
 				
-				//SW
+				//SB
 				6'b101011:
 				begin
 					alu_ctr_reg = 5'b00000; //add
 				end
+				
+				//LW
+				//6'b100011:
+				//begin
+					//alu_ctr_reg = 5'b00000; add
+				//end
+				
+				//SW
+				//6'b101011:
+				//begin
+					//alu_ctr_reg = 5'b00000; add
+				//end
+				
+				//J
+				6'b000010:
+				begin
+					alu_ctr_reg = 5'b00000; //add(redundant)
+				end
+
 			endcase
 		end
 			
