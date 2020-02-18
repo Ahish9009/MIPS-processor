@@ -3,22 +3,22 @@
 // |     00000      |        +           | ADD
 // |     00001      |        -           | SUBTRACT
 // |     00010      |      <(US)         | LESS THAN UNSIGNED
-// |     00011      |Shift-R-Signed-R    |
-// |     00100      |    Shift-L-RS      |
-// |     00101      |  Shift-L-SHAMT     | 
+// |     00011      |  Shift-R-Signed-R  |
+// |     00100      |     Shift-L-RS     |
+// |     00101      |   Shift-L-SHAMT    | 
 // |     00110      |        >(S)        | GREATED THAN SIGNED
 // |     00111      |        <(S)        | LESS THAN SIGNED
-// |     01000      |        =           | EQUAL TO
-// |     01001      |        &           | AND
-// |     01010      |        |           | OR
-// |     01011      |Shift-R-Signed-S    |
-// |     01100      |      NOR           |
-// |     01101      |      XOR           |
+// |     01000      |         =          | EQUAL TO
+// |     01001      |         &          | AND
+// |     01010      |         |          | OR
+// |     01011      |  Shift-R-Signed-S  |
+// |     01100      |        NOR         |
+// |     01101      |        XOR         |
 // |     01110      |   Shift-R-US-RS    |
 // |     01111      |  Shift-R-US-SHAMT  |
-// |     10000      |      <=(S)         | LESS THAN EQUAL SIGNED
-// |     10001      |      >=(S)         | GREATER THAN EQUAL SIGNED
-// |     10010      |       !=           |  NOT EQUAL TO
+// |     10000      |        <=(S)       | LESS THAN EQUAL SIGNED
+// |     10001      |        >=(S)       | GREATER THAN EQUAL SIGNED
+// |     10010      |         !=         |  NOT EQUAL TO
 // |-------------------------------------|
 
 module alu(
@@ -88,23 +88,23 @@ module alu(
 			5'b00011:
 			//Shift-R-Signed-Rs
 			begin
-				temp_res = x >>> y;
+				temp_res = $signed(x) >>> $signed(y);
 				temp_v = 0;
 				temp_c_out = 0;
 			end
 				
 			4'b00100: 
-			//left shift by SHAMT
+			//left shift by RS 
 			begin
-				temp_res = x << shamt;
+				temp_res = x << y;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
 			
 			5'b00101: 
-			//left shift by RS
+			//left shift by SHAMT 
 			begin
-				temp_res = x << y;
+				temp_res = x << shamt;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
@@ -152,7 +152,7 @@ module alu(
 			5'b01011: 
 			//Shift-R-Signed-Shamt
 			begin
-				temp_res = x >>> shamt;
+				temp_res = $signed(x) >>> $signed(shamt);
 				temp_v = 0;
 				temp_c_out = 0;
 			end
@@ -174,7 +174,7 @@ module alu(
 			end
 			
 			5'b01110: 
-			//shift right by RS
+			//shift right by RS unsigned
 			begin
 				temp_res = x >> y;
 				temp_v = 0;
@@ -182,13 +182,37 @@ module alu(
 			end
 			
 			5'b01111: 
-			//shift right by SHAMT
+			//shift right by SHAMT unsigned
 			begin
 				temp_res = x >> shamt;
 				temp_v = 0;
 				temp_c_out = 0;
 			end
+
+			5'b10000: 
+			// Less than Equal Signed
+			begin
+				temp_res = ($signed(x) <= $signed(y)) ? 1 : 0;
+				temp_v = 0;
+				temp_c_out = 0;
+			end
 			
+			5'b10001: 
+			// Greater than Equal Signed
+			begin
+				temp_res = ($signed(x) >= $signed(y)) ? 1 : 0;
+				temp_v = 0;
+				temp_c_out = 0;
+			end
+
+			5'b10010: 
+			// Not equal to 
+			begin
+				temp_res = (x == y) ? 0 : 1;
+				temp_v = 0;
+				temp_c_out = 0;
+			end
+
 		endcase
 	end
 endmodule	

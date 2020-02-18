@@ -99,8 +99,8 @@ module decode_instr(
 	assign mem_write = (opcode == 6'b101011) ? 1 : 0;
 	assign jump = (opcode == 6'b000010) ? 1 : 0;
 	assign branch = (opcode == 6'b000100) ? 1 : 0;	
-	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100) ? 1 : 0; 
-	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100) ? 0 : 1;
+	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 000001 | opcode == 000111 | opcode == 000110) ? 1 : 0; 
+	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110) ? 0 : 1;
 	
 	always @(*) begin
 		
@@ -210,17 +210,23 @@ module decode_instr(
 				begin
 					alu_ctr_reg = 5'b00001; //sub
 				end
+
+				//BGEZ
+				6'b000001:
+				begin
+					alu_ctr_reg = 5'b10001; //Greater than equal signed
+				end
 				
 				//BGTZ
-				6'b000100:
+				6'b000111:
 				begin
 					alu_ctr_reg = 5'b00110; //Greater than signed
 				end
 				
 				//BLEZ
-				6'b000100:
+				6'b000110:
 				begin
-					alu_ctr_reg = 5'b00110; //Greater than signed
+					alu_ctr_reg = 5'b10000; //Less than equal signed
 				end
 				
 				//LW
