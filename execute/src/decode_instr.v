@@ -65,11 +65,12 @@ module decode_instr(
     output reg_write,
     output mem_read,
     output mem_write,
+    output mem_to_reg, 
     output jump,
     output branch,
     output sign_ext,
     output alu_src,
-    output [3:0] alu_ctr,
+    output [4:0] alu_ctr,
     output [4:0] rs,
     output [4:0] rt,
     output [4:0] rd
@@ -98,10 +99,12 @@ module decode_instr(
 	// all these can be decided simply by opcode
 	assign reg_dst = (opcode == 6'b000000) ? 1 : 0; 
 	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 | opcode == 6'b001110 | opcode == 6'b001101 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b100000) ? 1 : 0;
+	
 	assign mem_read = (opcode == 6'b100011 | opcode == 6'b100000) ? 1 : 0;
 	assign mem_write = (opcode == 6'b101011 | opcode == 6'b101000) ? 1 : 0;
+	assign mem_to_reg = (opcode == 6'b100000) ? 1 : 0;
+	
 	assign jump = (opcode == 6'b000010) ? 1 : 0;
-
 	assign branch = (opcode == 6'b000100 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 1 : 0; 
 
 	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101 | opcode == 6'b100000 | opcode == 6'b101000) ? 1 : 0; 

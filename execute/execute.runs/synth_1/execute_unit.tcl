@@ -30,10 +30,12 @@ set_property ip_output_repo /home/ahish/Sem-4/proc/execute/execute.cache/ip [cur
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/ahish/Sem-4/proc/execute/src/alu.v
+  /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/data_memory.v
   /home/ahish/Sem-4/proc/execute/src/decode_instr.v
   /home/ahish/Sem-4/proc/execute/src/extender.v
   /home/ahish/Sem-4/proc/execute/src/mux2x1_32.v
   /home/ahish/Sem-4/proc/execute/src/mux2x1_5.v
+  /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/registers.v
   /home/ahish/Sem-4/proc/execute/src/execute_unit.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being

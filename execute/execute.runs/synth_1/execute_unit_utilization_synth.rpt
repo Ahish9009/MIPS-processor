@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Feb 19 03:55:04 2020
+| Date         : Thu Feb 20 22:12:37 2020
 | Host         : ahish-VirtualBox running 64-bit Ubuntu 18.04.3 LTS
 | Command      : report_utilization -file execute_unit_utilization_synth.rpt -pb execute_unit_utilization_synth.pb
 | Design       : execute_unit
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1447 |     0 |    277400 |  0.52 |
-|   LUT as Logic          | 1447 |     0 |    277400 |  0.52 |
+| Slice LUTs*             | 1525 |     0 |    277400 |  0.55 |
+|   LUT as Logic          | 1525 |     0 |    277400 |  0.55 |
 |   LUT as Memory         |    0 |     0 |    108200 |  0.00 |
 | Slice Registers         | 1030 |     0 |    554800 |  0.19 |
 |   Register as Flip Flop | 1024 |     0 |    554800 |  0.18 |
 |   Register as Latch     |    6 |     0 |    554800 | <0.01 |
-| F7 Muxes                |  279 |     0 |    138700 |  0.20 |
+| F7 Muxes                |  275 |     0 |    138700 |  0.20 |
 | F8 Muxes                |   10 |     0 |     69350 |  0.01 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -87,29 +87,29 @@ Table of Contents
 4. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+-----------+--------+
-|          Site Type          | Used | Fixed | Available |  Util% |
-+-----------------------------+------+-------+-----------+--------+
-| Bonded IOB                  | 1121 |     0 |       400 | 280.25 |
-| Bonded IPADs                |    0 |     0 |        50 |   0.00 |
-| Bonded OPADs                |    0 |     0 |        32 |   0.00 |
-| Bonded IOPADs               |    0 |     0 |       130 |   0.00 |
-| PHY_CONTROL                 |    0 |     0 |         8 |   0.00 |
-| PHASER_REF                  |    0 |     0 |         8 |   0.00 |
-| OUT_FIFO                    |    0 |     0 |        32 |   0.00 |
-| IN_FIFO                     |    0 |     0 |        32 |   0.00 |
-| IDELAYCTRL                  |    0 |     0 |         8 |   0.00 |
-| IBUFDS                      |    0 |     0 |       384 |   0.00 |
-| GTXE2_COMMON                |    0 |     0 |         4 |   0.00 |
-| GTXE2_CHANNEL               |    0 |     0 |        16 |   0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        32 |   0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        32 |   0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       400 |   0.00 |
-| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |       150 |   0.00 |
-| IBUFDS_GTE2                 |    0 |     0 |         8 |   0.00 |
-| ILOGIC                      |    0 |     0 |       400 |   0.00 |
-| OLOGIC                      |    0 |     0 |       400 |   0.00 |
-+-----------------------------+------+-------+-----------+--------+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |  290 |     0 |       400 | 72.50 |
+| Bonded IPADs                |    0 |     0 |        50 |  0.00 |
+| Bonded OPADs                |    0 |     0 |        32 |  0.00 |
+| Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |         8 |  0.00 |
+| PHASER_REF                  |    0 |     0 |         8 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |        32 |  0.00 |
+| IN_FIFO                     |    0 |     0 |        32 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |         8 |  0.00 |
+| IBUFDS                      |    0 |     0 |       384 |  0.00 |
+| GTXE2_COMMON                |    0 |     0 |         4 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |        16 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        32 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        32 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       400 |  0.00 |
+| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |       150 |  0.00 |
+| IBUFDS_GTE2                 |    0 |     0 |         8 |  0.00 |
+| ILOGIC                      |    0 |     0 |       400 |  0.00 |
+| OLOGIC                      |    0 |     0 |       400 |  0.00 |
++-----------------------------+------+-------+-----------+-------+
 
 
 5. Clocking
@@ -152,14 +152,14 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     | 1088 |                  IO |
 | FDRE     | 1024 |        Flop & Latch |
-| LUT6     | 1018 |                 LUT |
-| MUXF7    |  279 |               MuxFx |
-| LUT5     |  224 |                 LUT |
-| LUT2     |  147 |                 LUT |
-| LUT3     |  129 |                 LUT |
-| LUT4     |  105 |                 LUT |
+| LUT6     | 1012 |                 LUT |
+| MUXF7    |  275 |               MuxFx |
+| LUT5     |  273 |                 LUT |
+| OBUF     |  257 |                  IO |
+| LUT2     |  173 |                 LUT |
+| LUT4     |  137 |                 LUT |
+| LUT3     |  132 |                 LUT |
 | IBUF     |   33 |                  IO |
 | CARRY4   |   15 |          CarryLogic |
 | MUXF8    |   10 |               MuxFx |

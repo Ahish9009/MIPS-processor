@@ -24,7 +24,7 @@ module data_memory(
     input write_mem,
     input [31:0] addr,
     input [31:0] data_in,
-    output reg [31:0] data_out
+    output [31:0] data_out
     );
     
     reg [31:0] data_memory_array [255:0];
@@ -32,6 +32,7 @@ module data_memory(
     //initialize
     integer j;
     initial begin
+      
         for (j=0; j < 256; j=j+1) begin
             data_memory_array[j] = 31'b0;
         end
@@ -41,11 +42,11 @@ module data_memory(
         if (write_mem == 1'b1) begin
             data_memory_array[addr] = data_in;   
         end
-        
-        data_out <= data_memory_array[addr];
          
     end
     
+//    assign data_out = data_memory_array[addr];
+    assign data_out = 0;
     
     
 endmodule

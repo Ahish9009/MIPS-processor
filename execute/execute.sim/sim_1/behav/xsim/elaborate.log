@@ -1,87 +1,92 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 40a8504ff13f45349937f17ec2c9d911 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_unit_behav xil_defaultlib.execute_unit xil_defaultlib.glbl -log elaborate.log 
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 40a8504ff13f45349937f17ec2c9d911 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot execute_tb1_behav xil_defaultlib.execute_tb1 xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'data_out' [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:73]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'b' [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:182]
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 21. Module alu doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 185. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 185. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 233. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 24. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 220. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 220. Module adder32bit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 268. Module fulladder doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_memory
 Compiling module xil_defaultlib.decode_instr
 Compiling module xil_defaultlib.mux2x1_5
+Compiling module xil_defaultlib.registers
 Compiling module xil_defaultlib.extender
 Compiling module xil_defaultlib.mux2x1_32
 Compiling module xil_defaultlib.fulladder
 Compiling module xil_defaultlib.adder32bit
 Compiling module xil_defaultlib.alu
 Compiling module xil_defaultlib.execute_unit
+Compiling module xil_defaultlib.execute_tb1
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot execute_unit_behav
+Built simulation snapshot execute_tb1_behav

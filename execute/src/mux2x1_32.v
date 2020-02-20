@@ -27,7 +27,7 @@ module mux2x1_32(
     output [31:0] out
     );
     
-    assign out = {32{(~s0)}}&a | {32{s0}}&b ;
+    assign out = {32{(~s0)}}&a | {32{s0}}&b;
     
 endmodule
 
