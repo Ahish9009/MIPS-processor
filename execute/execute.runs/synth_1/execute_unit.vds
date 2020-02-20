@@ -1,0 +1,353 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Feb 19 03:54:09 2020
+# Process ID: 2526
+# Current directory: /home/ahish/Sem-4/proc/execute/execute.runs/synth_1
+# Command line: vivado -log execute_unit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source execute_unit.tcl
+# Log file: /home/ahish/Sem-4/proc/execute/execute.runs/synth_1/execute_unit.vds
+# Journal file: /home/ahish/Sem-4/proc/execute/execute.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source execute_unit.tcl -notrace
+Command: synth_design -top execute_unit -part xc7z100ffg1156-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z100'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z100'
+INFO: [Common 17-86] Your Synthesis license expires in 20 day(s)
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2549 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1755.809 ; gain = 215.656 ; free physical = 641 ; free virtual = 4491
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'execute_unit' [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:22]
+INFO: [Synth 8-6157] synthesizing module 'decode_instr' [/home/ahish/Sem-4/proc/execute/src/decode_instr.v:59]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ahish/Sem-4/proc/execute/src/decode_instr.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'decode_instr' (1#1) [/home/ahish/Sem-4/proc/execute/src/decode_instr.v:59]
+WARNING: [Synth 8-689] width (5) of port connection 'alu_ctr' does not match port width (4) of module 'decode_instr' [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:119]
+INFO: [Synth 8-6157] synthesizing module 'mux2x1_5' [/home/ahish/Sem-4/proc/execute/src/mux2x1_5.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'mux2x1_5' (2#1) [/home/ahish/Sem-4/proc/execute/src/mux2x1_5.v:22]
+INFO: [Synth 8-6157] synthesizing module 'extender' [/home/ahish/Sem-4/proc/execute/src/extender.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'extender' (3#1) [/home/ahish/Sem-4/proc/execute/src/extender.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2x1_32' [/home/ahish/Sem-4/proc/execute/src/mux2x1_32.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux2x1_32' (4#1) [/home/ahish/Sem-4/proc/execute/src/mux2x1_32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/ahish/Sem-4/proc/execute/src/alu.v:24]
+INFO: [Synth 8-6157] synthesizing module 'adder32bit' [/home/ahish/Sem-4/proc/execute/src/alu.v:220]
+INFO: [Synth 8-6157] synthesizing module 'fulladder' [/home/ahish/Sem-4/proc/execute/src/alu.v:268]
+INFO: [Synth 8-6155] done synthesizing module 'fulladder' (5#1) [/home/ahish/Sem-4/proc/execute/src/alu.v:268]
+INFO: [Synth 8-6155] done synthesizing module 'adder32bit' (6#1) [/home/ahish/Sem-4/proc/execute/src/alu.v:220]
+WARNING: [Synth 8-7023] instance 'add' of module 'adder32bit' has 7 connections declared, but only 6 given [/home/ahish/Sem-4/proc/execute/src/alu.v:49]
+WARNING: [Synth 8-7023] instance 'sub' of module 'adder32bit' has 7 connections declared, but only 6 given [/home/ahish/Sem-4/proc/execute/src/alu.v:50]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ahish/Sem-4/proc/execute/src/alu.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (7#1) [/home/ahish/Sem-4/proc/execute/src/alu.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'execute_unit' (8#1) [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:22]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1818.559 ; gain = 278.406 ; free physical = 668 ; free virtual = 4521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1818.559 ; gain = 278.406 ; free physical = 666 ; free virtual = 4519
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z100ffg1156-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1826.562 ; gain = 286.410 ; free physical = 666 ; free virtual = 4519
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z100ffg1156-2
+WARNING: [Synth 8-327] inferring latch for variable 'alu_ctr_reg_reg' [/home/ahish/Sem-4/proc/execute/src/decode_instr.v:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_res_reg' [/home/ahish/Sem-4/proc/execute/src/alu.v:41]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_v_reg' [/home/ahish/Sem-4/proc/execute/src/alu.v:42]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_c_out_reg' [/home/ahish/Sem-4/proc/execute/src/alu.v:44]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1844.477 ; gain = 304.324 ; free physical = 614 ; free virtual = 4472
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 130   
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	  13 Input      5 Bit        Muxes := 1     
+	  16 Input      5 Bit        Muxes := 2     
+	   4 Input      5 Bit        Muxes := 1     
+	  14 Input      5 Bit        Muxes := 1     
+	  13 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 35    
+	  20 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module execute_unit 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 32    
+Module decode_instr 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	  13 Input      5 Bit        Muxes := 1     
+	  16 Input      5 Bit        Muxes := 2     
+	   4 Input      5 Bit        Muxes := 1     
+	  14 Input      5 Bit        Muxes := 1     
+	  13 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module mux2x1_5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module extender 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mux2x1_32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module fulladder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+Module adder32bit 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module alu 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+	  20 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2020 (col length:140)
+BRAMs: 1510 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3332] Sequential element (alu_ctr_reg_reg[4]) is unused and will be removed from module decode_instr.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[31]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[30]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[29]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[28]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[27]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[26]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[25]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[24]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[23]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[22]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[21]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[20]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[19]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[18]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[17]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[16]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[15]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[14]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[13]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[12]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[11]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[10]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[9]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[8]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[7]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[6]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[5]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[4]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[3]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[2]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[1]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_res_reg[0]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_v_reg) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (temp_c_out_reg) is unused and will be removed from module alu.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 285 ; free virtual = 4176
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 250 ; free virtual = 4140
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 167 ; free virtual = 4058
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 106 ; free virtual = 3997
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 106 ; free virtual = 3996
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 103 ; free virtual = 3994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 103 ; free virtual = 3994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 121 ; free virtual = 3998
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 120 ; free virtual = 3998
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    15|
+|3     |LUT2   |   147|
+|4     |LUT3   |   129|
+|5     |LUT4   |   105|
+|6     |LUT5   |   224|
+|7     |LUT6   |  1018|
+|8     |MUXF7  |   279|
+|9     |MUXF8  |    10|
+|10    |FDRE   |  1024|
+|11    |LDC    |     2|
+|12    |LDP    |     4|
+|13    |IBUF   |    33|
+|14    |OBUF   |  1088|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------------+------+
+|      |Instance |Module       |Cells |
++------+---------+-------------+------+
+|1     |top      |             |  4079|
+|2     |  A      |decode_instr |   184|
+|3     |  M2     |mux2x1_32    |  1072|
++------+---------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 120 ; free virtual = 3997
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.453 ; gain = 605.301 ; free physical = 119 ; free virtual = 3997
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 2145.461 ; gain = 605.301 ; free physical = 119 ; free virtual = 3997
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2145.461 ; gain = 0.000 ; free physical = 176 ; free virtual = 4058
+INFO: [Netlist 29-17] Analyzing 310 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2184.273 ; gain = 0.000 ; free physical = 108 ; free virtual = 3866
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  LDC => LDCE: 2 instances
+  LDP => LDPE: 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 42 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 2184.273 ; gain = 673.938 ; free physical = 240 ; free virtual = 3998
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2184.273 ; gain = 0.000 ; free physical = 240 ; free virtual = 3998
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/ahish/Sem-4/proc/execute/execute.runs/synth_1/execute_unit.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file execute_unit_utilization_synth.rpt -pb execute_unit_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 19 03:55:04 2020...
