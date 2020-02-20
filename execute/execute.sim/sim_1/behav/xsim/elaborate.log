@@ -4,8 +4,6 @@ Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 40a8504ff1
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'data_out' [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:73]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'b' [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:182]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "/home/ahish/Sem-4/proc/execute/src/alu.v" Line 24. Module alu doesn't have a timescale but at least one module in design has a timescale.

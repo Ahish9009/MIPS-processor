@@ -65,24 +65,10 @@ module execute_unit(
 //    intializing data memory
     
     wire mem_write;
-//    wire [31:0] alu_out;
+    wire [31:0] alu_out, datamem_out;
     data_memory DATA_MEM(CLK, mem_write, alu_out, busB, datamem_out);
     
-    
-/*
-		initializing registers
-*/
-//	 reg [31:0] regs [31:0]; //initializes the array
-	 
-//	 //sets all regs to 0
-//	 integer i;
-//    initial begin 
-//       for (i = 0; i < 32; i=i+1) begin
-//            regs[i] = 4;
-//       end
-//    end
-////---------------------------------------------------------------------
-	 
+
 /*
 		for output
 */
@@ -136,25 +122,17 @@ module execute_unit(
 		for updating registers
 */
     wire [4:0] rw;
-//    wire [4:0] ra, rb;
+    wire [4:0] ra, rb;
 
-	 //redundant but follows block diagram
- 	 assign ra = rs;
-	 assign rb = rt;
-	 //gets the register where write will take place
+	//redundant but follows block diagram
+ 	assign ra = rs;
+	assign rb = rt;
+	//gets the register where write will take place
     mux2x1_5 RW_SRC(reg_dst, rt, rd, rw);
-	 //loads the values onto the buses
-	 
+	
+	//loads the values onto the buses and updates registers
 	registers REGS(CLK, ra, rb, rw, reg_write, busW, busA, busB, reg0, reg1, reg2, reg3);
-	 
-//	 assign busA = regs[ra];
-//    assign busB = regs[rb];
-   
-//    always @(negedge CLK) begin    
-//        if (reg_write == 1'b1) begin
-//            regs[rw] = busW;
-//        end     
-//    end
+	
 //---------------------------------------------------------------------
 	 
 /*
@@ -168,9 +146,9 @@ module execute_unit(
     alu
 */
     wire v, c_out, zero;
-//    wire [31:0] alu_in2;
+    wire [31:0] alu_in2;
     mux2x1_32 ALU_SRC(alu_src, busB, imm32, alu_in2);
-    alu ALU1(alu_ctr, busA, alu_in2, shamt, alu_out, v, c_out, zero); //output rooted directly to busW as data memory has not been made yet
+    alu ALU(alu_ctr, busA, alu_in2, shamt, alu_out, v, c_out, zero); //output rooted directly to busW as data memory has not been made yet
 //---------------------------------------------------------------------    
     
     // connecting alu/data mem output to registers data input

@@ -1,2 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder32bit
+INFO: [VRFC 10-311] analyzing module fulladder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/decode_instr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decode_instr
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/execute_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module execute_unit
+INFO: [VRFC 10-2458] undeclared symbol mem_to_reg, assumed default net type wire [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:118]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/extender.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extender
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/mux2x1_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2x1_32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/mux2x1_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2x1_5
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/registers.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module registers
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/execute.srcs/sim_1/new/execute_tb1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module execute_tb1

@@ -54,7 +54,9 @@ module execute_tb1;
 	initial begin
 		CLK=0;
 		//write machine code here
-		instr = 32'b00000000000000010000100000100000;
+		instr = 32'b00000000000000010000100000100000; //ADD $1, $1, $0   works 
+//		instr = 32'b00100000001000000000000000001000; //ADDI $1, $0, 8   works
+//        instr = 32'b10000000001000000000000000000000; //LB $1, $0, 0   works
 		#10;
 		/*
 			rest of code

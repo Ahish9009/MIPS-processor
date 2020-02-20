@@ -34,19 +34,19 @@ module data_memory(
     initial begin
       
         for (j=0; j < 256; j=j+1) begin
-            data_memory_array[j] = 31'b0;
+            data_memory_array[j] = 8;
         end
     end
     
     always @(negedge CLK) begin
-        if (write_mem == 1'b1) begin
-            data_memory_array[addr] = data_in;   
+        if (write_mem == 1'b1 && data_in) begin
+            data_memory_array[addr[31:0]] = data_in;   
         end
          
     end
     
-//    assign data_out = data_memory_array[addr];
-    assign data_out = 0;
+    assign data_out = data_memory_array[addr];
+//    assign data_out = 32'b0;
     
     
 endmodule
