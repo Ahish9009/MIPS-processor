@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z100ffg1156-2" LaunchTime="1582239009">
-  <File Type="VDS-TIMINGSUMMARY" Name="execute_unit_timing_summary_synth.rpt"/>
+  <File Type="PA-TCL" Name="execute_unit.tcl"/>
+  <File Type="REPORTS-TCL" Name="execute_unit_reports.tcl"/>
+  <File Type="RDS-RDS" Name="execute_unit.vds"/>
+  <File Type="RDS-UTIL" Name="execute_unit_utilization_synth.rpt"/>
   <File Type="RDS-DCP" Name="execute_unit.dcp"/>
   <File Type="RDS-UTIL-PB" Name="execute_unit_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="execute_unit_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="execute_unit_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="execute_unit.vds"/>
-  <File Type="REPORTS-TCL" Name="execute_unit_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="execute_unit_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="execute_unit.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/src/alu.v">

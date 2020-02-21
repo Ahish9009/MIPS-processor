@@ -29,6 +29,11 @@ module execute_tb1;
 	reg [31:0] instr;
 
 	// Outputs
+	wire branch_reg;
+	wire jump_reg;
+	wire zero_reg;
+	wire [15:0] imm16_reg;
+	wire [25:0] instr_address_reg;
 	wire [31:0] busA;
 	wire [31:0] busB;
 	wire [31:0] busW;
@@ -42,6 +47,11 @@ module execute_tb1;
 	execute_unit uut (
 		.CLK(CLK), 
 		.instr(instr), 
+		.branch_reg(branch_reg),
+		.jump_reg(jump_reg),
+		.zero_reg(zero_reg),
+		.imm16_reg(imm16_reg),
+		.instr_address_reg(instr_address_reg),
 		.busA(busA), 
 		.busB(busB), 
 		.busW(busW), 
@@ -54,8 +64,8 @@ module execute_tb1;
 	initial begin
 		CLK=0;
 		//write machine code here
-		instr = 32'b00000000000000010000100000100000; //ADD $1, $1, $0   works 
-//		instr = 32'b00100000001000000000000000001000; //ADDI $1, $0, 8   works
+//		instr = 32'b00000000000000010000100000100000; //ADD $1, $1, $0   works 
+		instr = 32'b00100000001000000000000000001000; //ADDI $1, $0, 8   works
 //        instr = 32'b10000000001000000000000000000000; //LB $1, $0, 0   works
 		#10;
 		/*

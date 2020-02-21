@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module extender(
+module extender32(
     input sign_ext,
     input [15:0] imm16,
     output [31:0] imm32
@@ -29,6 +29,16 @@ module extender(
 	 
 		 assign imm32 = ({ {16{sign_ext}}, imm16 }&{32{(~sign_ext)}}) | ({ {16{imm16[15]}}, imm16 }&{32{sign_ext}});
 
+endmodule
+
+module extender30(
+    input sign_ext,
+    input [15:0] imm16,
+    output [29:0] imm30
+    );
+    
+	 
+		 assign imm30 = ({ {14{sign_ext}}, imm16 }&{30{(~sign_ext)}}) | ({ {14{imm16[15]}}, imm16 }&{30{sign_ext}});
 
 endmodule
 

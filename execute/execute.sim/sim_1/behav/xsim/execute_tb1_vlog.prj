@@ -1,10 +1,12 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../execute.srcs/sources_1/new/adder32bit.v" \
 "../../../../src/alu.v" \
 "../../../../execute.srcs/sources_1/new/data_memory.v" \
 "../../../../src/decode_instr.v" \
 "../../../../src/execute_unit.v" \
 "../../../../src/extender.v" \
+"../../../../execute.srcs/sources_1/new/fulladder.v" \
 "../../../../src/mux2x1_32.v" \
 "../../../../src/mux2x1_5.v" \
 "../../../../execute.srcs/sources_1/new/registers.v" \

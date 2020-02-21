@@ -22,6 +22,11 @@
 module execute_unit(
     input CLK, 
     input [31:0] instr,
+    output reg branch_reg = 0,
+    output reg jump_reg = 0,
+    output reg zero_reg = 0, 
+    output reg [15:0] imm16_reg = 16'b0,
+    output reg [25:0] instr_address_reg = 26'b0,
     output [31:0] busA, //have to show the full array here
     output [31:0] busB,
     output [31:0] busW,
@@ -61,9 +66,9 @@ module execute_unit(
     
 //    wire [31:0] busA, busB, busW;
     
-    
-//    intializing data memory
-    
+/*    
+    intializing data memory
+*/    
     wire mem_write;
     wire [31:0] alu_out, datamem_out;
     data_memory DATA_MEM(CLK, mem_write, alu_out, busB, datamem_out);
@@ -115,7 +120,7 @@ module execute_unit(
     wire reg_dst, reg_write, mem_read, jump, branch, sign_ext, alu_src;
     wire [4:0] alu_ctr;
     wire [4:0] rs, rt, rd, shamt;
-    decode_instr A(instr, shamt, instr_index, imm16, reg_dst, reg_write, mem_read, mem_write, mem_to_reg, jump, branch, sign_ext, alu_src, alu_ctr, rs, rt, rd);
+    decode_instr INSTRUCTION_DECODER(instr, shamt, instr_index, imm16, reg_dst, reg_write, mem_read, mem_write, mem_to_reg, jump, branch, sign_ext, alu_src, alu_ctr, rs, rt, rd);
 //---------------------------------------------------------------------
 	 
 /*
@@ -131,7 +136,7 @@ module execute_unit(
     mux2x1_5 RW_SRC(reg_dst, rt, rd, rw);
 	
 	//loads the values onto the buses and updates registers
-	registers REGS(CLK, ra, rb, rw, reg_write, busW, busA, busB, reg0, reg1, reg2, reg3);
+	registers REGISTERS(CLK, ra, rb, rw, reg_write, busW, busA, busB, reg0, reg1, reg2, reg3);
 	
 //---------------------------------------------------------------------
 	 
@@ -139,7 +144,7 @@ module execute_unit(
 		sign extender
 */
     wire [31:0] imm32;
-    extender EXT(sign_ext, imm16, imm32);
+    extender32 SIGN_EXTENDER_32(sign_ext, imm16, imm32);
 //---------------------------------------------------------------------
     
 /*
@@ -154,7 +159,20 @@ module execute_unit(
     // connecting alu/data mem output to registers data input
     
     mux2x1_32 MEM_TO_REG(mem_to_reg, alu_out, datamem_out, busW);
-//    assign busW = (mem_to_reg == 0) ? alu_out : datamem_out;
+//---------------------------------------------------------------------    
+
+/*
+    to pass control signals to fetch at next clock cycle
+*/
+    always @(negedge CLK) begin
+        
+        branch_reg <= branch;
+        jump_reg <= jump;
+        zero_reg <= zero;
+        imm16_reg <= imm16;
+        instr_address_reg <= instr_index;
+    
+    end
 
 endmodule
 
