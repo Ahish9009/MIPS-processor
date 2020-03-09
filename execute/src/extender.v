@@ -39,6 +39,6 @@ module extender30(
     
 	 
 		 assign imm30 = ({ {14{sign_ext}}, imm16 }&{30{(~sign_ext)}}) | ({ {14{imm16[15]}}, imm16 }&{30{sign_ext}});
-
+//        assign imm30[29:0] = { {14{sign_ext}}, imm16 };
 endmodule
 

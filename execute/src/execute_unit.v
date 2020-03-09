@@ -71,9 +71,9 @@ module execute_unit(
 */    
     wire mem_write;
     wire [31:0] alu_out, datamem_out;
-    data_memory DATA_MEM(CLK, mem_write, alu_out, busB, datamem_out);
+    wire [7:0] word_out;
+    data_memory DATA_MEM(CLK, mem_write, alu_out, busB, word_out, datamem_out);
     
-
 /*
 		for output
 */

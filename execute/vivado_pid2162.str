@@ -1,0 +1,367 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:39:14 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 2162
+License: Customer
+
+Current time: 	Mon Mar 09 20:27:15 IST 2020
+Time zone: 	India Standard Time (Asia/Kolkata)
+
+OS: Ubuntu
+OS Version: 5.0.0-36-generic
+OS Architecture: amd64
+Available processors (cores): 3
+
+Display: :0
+Screen size: 3360x2100
+Screen resolution (DPI): 200
+Available screens: 1
+Available disk space: 38 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=24
+
+Java version: 	9.0.4 64-bit
+Java home: 	/tools/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4
+Java executable location: 	/tools/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	ahish
+User home directory: /home/ahish
+User working directory: /home/ahish/Sem-4/proc/execute
+User country: 	IN
+User language: 	en
+User locale: 	en_IN
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2019.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: /home/ahish/.Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: /home/ahish/.Xilinx/Vivado/2019.2/
+Vivado layouts directory: /home/ahish/.Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	/tools/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/ahish/Sem-4/proc/execute/vivado.log
+Vivado journal file location: 	/home/ahish/Sem-4/proc/execute/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-2162-ahish-VirtualBox
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /tools/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2019.2
+XILINX_VITIS: 
+XILINX_VIVADO: /tools/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 775 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 775 MB. GUI used memory: 74 MB. Current time: 3/9/20, 8:27:17 PM IST
+// WARNING: HEventQueue.dispatchEvent() is taking  1010 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1014 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1008 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1043 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1007 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1007 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1005 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1010 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1004 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1004 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1036 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1049 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1007 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1013 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1006 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1003 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1007 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1017 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1012 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1005 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1008 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1005 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1005 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1006 ms.
+selectButton(PAResourceEtoH.GettingStartedView_OPEN_PROJECT, "Open Project"); // y (x, cr)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+setFileChooser("/home/ahish/Sem-4/proc/execute/execute.xpr");
+// [GUI Memory]: 123 MB (+127004kb) [00:06:46]
+// [Engine Memory]: 837 MB (+726682kb) [00:06:46]
+// Opening Vivado Project: /home/ahish/Sem-4/proc/execute/execute.xpr. Version: Vivado v2019.2 
+// bB (cr):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 849 MB. GUI used memory: 73 MB. Current time: 3/9/20, 8:33:52 PM IST
+// Tcl Message: open_project /home/ahish/Sem-4/proc/execute/execute.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/ahish/Sem-4/proc/execute/execute.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,004 MB (+130379kb) [00:06:51]
+// [Engine Memory]: 1,055 MB (+1126kb) [00:06:52]
+// WARNING: HEventQueue.dispatchEvent() is taking  2757 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 6639.035 ; gain = 214.586 ; free physical = 1492 ; free virtual = 5135 
+// Project name: execute; location: /home/ahish/Sem-4/proc/execute; part: xc7z100ffg1156-2
+// 'i' command handler elapsed time: 11 seconds
+dismissDialog("Open Project"); // bB (cr)
+// [GUI Memory]: 133 MB (+3644kb) [00:06:58]
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (fetch_unit.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fetch_unit (fetch_unit.v)]", 2, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fetch_unit (fetch_unit.v)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,102 MB. GUI used memory: 80 MB. Current time: 3/9/20, 8:34:12 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,146 MB. GUI used memory: 80 MB. Current time: 3/9/20, 8:34:37 PM IST
+// [Engine Memory]: 1,146 MB (+40479kb) [00:07:31]
+// Elapsed time: 30 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u (O, cr) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// bB (cr):  Open Elaborated Design : addNotify
+// Tcl Message: synth_design -rtl -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -name rtl_1 Starting synth_design Using part: xc7z100ffg1156-2 Top: execute_unit 
+// TclEventType: ELABORATE_START
+// HMemoryUtils.trashcanNow. Engine heap size: 1,641 MB. GUI used memory: 82 MB. Current time: 3/9/20, 8:34:52 PM IST
+// TclEventType: ELABORATE_FINISH
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,831 MB. GUI used memory: 82 MB. Current time: 3/9/20, 8:34:56 PM IST
+// [Engine Memory]: 1,831 MB (+657407kb) [00:07:50]
+// [GUI Memory]: 141 MB (+1212kb) [00:07:51]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// TclEventType: DESIGN_NEW
+// Xgd.load filename: /tools/Xilinx/Vivado/2019.2/data/parts/xilinx/zynq/devint/zynq/xc7z100/xc7z100.xgd; ZipEntry: xc7z100_detail.xgd elapsed time: 1.4s
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  2039 ms.
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z100ffg1156-2 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 7172.441 ; gain = 195.637 ; free physical = 890 ; free virtual = 4579 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/ahish/Sem-4/proc/execute/src/alu.v:55] INFO: [Synth 8-6155] done synthesizing module 'alu' (9#1) [/home/ahish/Sem-4/proc/execute/src/alu.v:24] INFO: [Synth 8-6155] done synthesizing module 'execute_unit' (10#1) [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:22] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 7217.348 ; gain = 240.543 ; free physical = 920 ; free virtual = 4610 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 7235.160 ; gain = 258.355 ; free physical = 917 ; free virtual = 4608 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 7235.160 ; gain = 258.355 ; free physical = 917 ; free virtual = 4608 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 7235.160 ; gain = 0.000 ; free physical = 909 ; free virtual = 4600 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7361.922 ; gain = 0.000 ; free physical = 809 ; free virtual = 4516 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 7423.047 ; gain = 446.242 ; free physical = 702 ; free virtual = 4416 
+// Tcl Message: 26 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 7423.047 ; gain = 743.961 ; free physical = 702 ; free virtual = 4416 
+// [GUI Memory]: 166 MB (+18432kb) [00:07:54]
+// 'dQ' command handler elapsed time: 23 seconds
+// Elapsed time: 23 seconds
+dismissDialog("Open Elaborated Design"); // bB (cr)
+// [GUI Memory]: 178 MB (+4340kb) [00:07:55]
+// Elapsed time: 72 seconds
+closeView(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // f
+// Elapsed time: 13 seconds
+closeFrame(PAResourceOtoP.PAViews_NETLIST, "Netlist"); // aA (aL, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v)]", 1, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v), DATA_MEM : data_memory (data_memory.v)]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v), DATA_MEM : data_memory (data_memory.v)]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v), DATA_MEM : data_memory (data_memory.v)]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, execute_unit (execute_unit.v), DATA_MEM : data_memory (data_memory.v)]", 2, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Elapsed time: 79 seconds
+selectCodeEditor("data_memory.v", 434, 911); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 1,928 MB (+5820kb) [00:11:04]
+selectCodeEditor("data_memory.v", 166, 970); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,928 MB. GUI used memory: 120 MB. Current time: 3/9/20, 8:38:12 PM IST
+typeControlKey((HResource) null, "data_memory.v", 'c'); // ch (w, cr)
+typeControlKey((HResource) null, "data_memory.v", 'c'); // ch (w, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fetch_unit (fetch_unit.v)]", 10, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fetch_unit (fetch_unit.v)]", 10, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fetch_unit (fetch_unit.v)]", 10, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fetch_unit (fetch_unit.v)]", 10); // B (F, cr)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 41 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "instructions"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 49 seconds
+dismissDialog("Add Sources"); // c (cr)
+// Tcl Message: close [ open /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/instructions.v w ] 
+// TclEventType: DESIGN_STALE
+// TclEventType: DG_GRAPH_STALE
+// bB (cr):  Add Sources  : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/instructions.v 
+// I (cr): Define Module: addNotify
+dismissDialog("Add Sources"); // bB (cr)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (A, H)
+dismissDialog("Define Module"); // I (cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,967 MB. GUI used memory: 120 MB. Current time: 3/9/20, 8:39:32 PM IST
+// Elapsed time: 149 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, instructions (instructions.v)]", 16, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, instructions (instructions.v)]", 16, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("instructions.v", 174, 742); // ch (w, cr)
+typeControlKey((HResource) null, "instructions.v", 'v'); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "instructions.v", 'v'); // ch (w, cr)
+// Elapsed time: 24 seconds
+selectCodeEditor("instructions.v", 238, 34); // ch (w, cr)
+selectCodeEditor("instructions.v", 238, 34, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("instructions.v", 184, 36); // ch (w, cr)
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,986 MB. GUI used memory: 121 MB. Current time: 3/9/20, 8:42:52 PM IST
+// Elapsed time: 255 seconds
+selectCodeEditor("instructions.v", 838, 720); // ch (w, cr)
+selectCodeEditor("instructions.v", 1090, 670); // ch (w, cr)
+// Elapsed time: 151 seconds
+selectCodeEditor("instructions.v", 152, 278); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("instructions.v", 474, 550); // ch (w, cr)
+selectCodeEditor("instructions.v", 162, 746); // ch (w, cr)
+selectCodeEditor("instructions.v", 308, 596); // ch (w, cr)
+selectCodeEditor("instructions.v", 316, 590); // ch (w, cr)
+selectCodeEditor("instructions.v", 300, 602); // ch (w, cr)
+selectCodeEditor("instructions.v", 654, 588); // ch (w, cr)
+selectCodeEditor("instructions.v", 660, 588); // ch (w, cr)
+typeControlKey((HResource) null, "instructions.v", 'c'); // ch (w, cr)
+selectCodeEditor("instructions.v", 672, 592); // ch (w, cr)
+typeControlKey((HResource) null, "instructions.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "instructions.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "instructions.v", 'v'); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "instructions.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "instructions.v", 'v'); // ch (w, cr)
+selectCodeEditor("instructions.v", 950, 594); // ch (w, cr)
+selectCodeEditor("instructions.v", 1330, 598); // ch (w, cr)
+selectCodeEditor("instructions.v", 1646, 596); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,006 MB. GUI used memory: 121 MB. Current time: 3/9/20, 8:51:28 PM IST
+// Elapsed time: 72 seconds
+selectCodeEditor("instructions.v", 362, 446); // ch (w, cr)
+// Elapsed time: 21 seconds
+selectCodeEditor("instructions.v", 228, 362); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("instructions.v", 236, 492); // ch (w, cr)
+selectCodeEditor("instructions.v", 222, 472); // ch (w, cr)
+selectCodeEditor("instructions.v", 222, 472, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("instructions.v", 222, 472); // ch (w, cr)
+selectCodeEditor("instructions.v", 274, 484); // ch (w, cr)
+selectCodeEditor("instructions.v", 274, 484, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("instructions.v", 298, 678); // ch (w, cr)
+selectCodeEditor("instructions.v", 298, 678, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("instructions.v", 222, 666); // ch (w, cr)
+selectCodeEditor("instructions.v", 226, 680); // ch (w, cr)
+selectCodeEditor("instructions.v", 388, 794); // ch (w, cr)
+selectCodeEditor("instructions.v", 754, 800); // ch (w, cr)
+selectCodeEditor("instructions.v", 1146, 790); // ch (w, cr)
+selectCodeEditor("instructions.v", 1522, 802); // ch (w, cr)
+selectCodeEditor("instructions.v", 1142, 810); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 80 seconds
+selectCodeEditor("instructions.v", 1088, 118); // ch (w, cr)
+selectCodeEditor("instructions.v", 616, 422); // ch (w, cr)
+// WARNING: HEventQueue.dispatchEvent() is taking  2840496 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,023 MB. GUI used memory: 121 MB. Current time: 3/9/20, 9:52:34 PM IST

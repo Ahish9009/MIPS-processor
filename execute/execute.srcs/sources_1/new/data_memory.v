@@ -24,10 +24,11 @@ module data_memory(
     input write_mem,
     input [31:0] addr,
     input [31:0] data_in,
+    output [7:0] word_out,
     output [31:0] data_out
     );
     
-    reg [31:0] data_memory_array [255:0];
+    reg [7:0] data_memory_array [4095:0];
     
     //initialize
     integer j;
@@ -38,15 +39,19 @@ module data_memory(
         end
     end
     
+    //clocked
     always @(negedge CLK) begin
         if (write_mem == 1'b1 && data_in) begin
-            data_memory_array[addr[31:0]] = data_in;   
+            data_memory_array[addr[31:0]] = data_in[31:24];   
+            data_memory_array[addr[31:0]+1] = data_in[23:16];   
+            data_memory_array[addr[31:0]+2] = data_in[15:8];   
+            data_memory_array[addr[31:0]+3] = data_in[7:0];   
         end
          
     end
     
-    assign data_out = data_memory_array[addr];
-//    assign data_out = 32'b0;
+    assign word_out = data_memory_array[addr];
+    assign data_out = {data_memory_array[addr], data_memory_array[addr+1], data_memory_array[addr+2], data_memory_array[addr+3]};
     
     
 endmodule

@@ -1,0 +1,268 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Mar  9 22:12:03 2020
+# Process ID: 22699
+# Current directory: /home/ahish/Sem-4/proc/execute
+# Command line: vivado
+# Log file: /home/ahish/Sem-4/proc/execute/vivado.log
+# Journal file: /home/ahish/Sem-4/proc/execute/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/ahish/Sem-4/proc/execute/execute.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/instructions.v] -no_script -reset -force -quiet
+remove_files  /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/instructions.v
+file delete -force /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/instructions.v
+close [ open /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/instr_memory.v w ]
+add_files /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/instr_memory.v
+update_compile_order -fileset sources_1
+launch_simulation
+source execute_tb1.tcl
+close_sim
+launch_simulation
+source execute_tb1.tcl
+close [ open /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/pipeline_proc.v w ]
+add_files /home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/pipeline_proc.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/ahish/Sem-4/proc/execute/execute.srcs/sim_1/new/pipeline_proc_tb1.v w ]
+add_files -fileset sim_1 /home/ahish/Sem-4/proc/execute/execute.srcs/sim_1/new/pipeline_proc_tb1.v
+update_compile_order -fileset sim_1
+close_sim
+launch_simulation
+source execute_tb1.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top pipeline_proc_tb1 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+set_property top_file /home/ahish/Sem-4/proc/execute/execute.srcs/sim_1/new/pipeline_proc_tb1.v [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+reset_run synth_1
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+launch_simulation
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+update_compile_order -fileset sources_1
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+add_bp {/home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/fetch_unit.v} 64
+remove_bps -file {/home/ahish/Sem-4/proc/execute/execute.srcs/sources_1/new/fetch_unit.v} -line 64
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+synth_design -rtl -name rtl_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+close_sim
+launch_simulation
+source pipeline_proc_tb1.tcl
+reset_run synth_1
+close_sim
+close_sim
