@@ -51,7 +51,8 @@ module data_memory(
     end
     
     assign word_out = data_memory_array[addr];
-    assign data_out = {data_memory_array[addr], data_memory_array[addr+1], data_memory_array[addr+2], data_memory_array[addr+3]};
-    
+//    assign data_out = {data_memory_array[addr], data_memory_array[addr+1], data_memory_array[addr+2], data_memory_array[addr+3]};
+    assign data_out = {8'b0, 8'b0, 8'b0, data_memory_array[addr]};
+        
     
 endmodule

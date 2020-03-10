@@ -30,8 +30,7 @@ module pipeline_proc(
     output [31:0] reg2,
     output [31:0] reg3,
     output [31:0] instr,
-    output [31:0] pc,
-    output [31:0] imm32
+    output [31:0] pc
     );
     
 //    initializing wires needed for following units
@@ -44,6 +43,6 @@ module pipeline_proc(
 
     
     execute_unit EXECUTE(CLK, instr, branch, jump, zero, imm16, instr_index, busA, busB, busW, reg0, reg1, reg2, reg3);
-    fetch_unit FETCH(CLK, branch, jump, zero, imm16, instr_index, instr, pc, imm32);
+    fetch_unit FETCH(CLK, branch, jump, zero, imm16, instr_index, instr, pc);
     
     endmodule

@@ -114,7 +114,7 @@ module execute_unit(
 /*
 		for decoding current instruction
 */
-    wire [25:0] instr_index;
+//    wire [25:0] instr_index;
 //    wire [15:0] imm16;
 //    wire mem_to_reg;
     wire reg_dst, reg_write, mem_read, sign_ext, alu_src;

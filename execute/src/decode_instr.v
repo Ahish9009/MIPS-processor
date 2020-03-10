@@ -272,13 +272,8 @@ module decode_instr(
 				begin
 					alu_ctr_reg = 5'b00000; //add(redundant)
 				end
-
 			endcase
 		end
-			
-		
 	end
-
-
 endmodule
 

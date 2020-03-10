@@ -38,23 +38,23 @@ module instr_memory(
             instr_memory_array[j+3] = 8'b00100000; //ADD $1, $1, $0   works ;
         end
 //        BEQ
-//        for (j=100; j < 104; j=j+4) begin
-//        // 00010000 00000000 11111111 1 110 000 0 -32
-                                              
-//            instr_memory_array[j] = 8'b00010000;
-//            instr_memory_array[j+1] = 8'b00000000;
-//            instr_memory_array[j+2] = 8'b11111111;
-//            instr_memory_array[j+3] = 8'b11111000;
-//        end
-//        JUMP
         for (j=100; j < 104; j=j+4) begin
-        // 00001000 00000000 00000000 00000001
+        // 00010000 00000000 11111111 1 110 000 0 -32
                                               
-            instr_memory_array[j] = 8'b00001000;
+            instr_memory_array[j] = 8'b00010000;
             instr_memory_array[j+1] = 8'b00000000;
-            instr_memory_array[j+2] = 8'b00000000;
-            instr_memory_array[j+3] = 8'b00000001;
+            instr_memory_array[j+2] = 8'b11111111;
+            instr_memory_array[j+3] = 8'b11111000;
         end
+//        JUMP
+//        for (j=100; j < 104; j=j+4) begin
+//        // 00001000 00000000 00000000 00000001
+                                              
+//            instr_memory_array[j] = 8'b00001000;
+//            instr_memory_array[j+1] = 8'b00000000;
+//            instr_memory_array[j+2] = 8'b00000000;
+//            instr_memory_array[j+3] = 8'b00000001;
+//        end
         for (j=104; j < 300; j=j+4) begin
             instr_memory_array[j] = 8'b00000000;
             instr_memory_array[j+1] = 8'b00000001;

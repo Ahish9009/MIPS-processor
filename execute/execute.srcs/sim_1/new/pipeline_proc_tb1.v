@@ -35,7 +35,6 @@ module pipeline_proc_tb1;
 	wire [31:0] reg3;
 	wire [31:0] instr;
 	wire [31:0] pc;
-	wire [31:0] imm32;
 	
 
 	// Instantiate the Unit Under Test (UUT)
@@ -49,8 +48,7 @@ module pipeline_proc_tb1;
 		.reg2(reg2), 
 		.reg3(reg3),
 		.instr(instr),
-		.pc(pc),
-		.imm32(imm32)
+		.pc(pc)
 	);
 
 	initial begin
