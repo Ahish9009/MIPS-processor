@@ -3,35 +3,35 @@
 // |----------------------------------------------|
 // |S.No| Instruction   | Type | OPCODE |  FUNCT  |
 // |----------------------------------------------|
-// |  1 |     ADD       |  R   | 000000 | 100000  |
-// |  2 |     AND       |  R   | 000000 | 100100  |
-// |  3 |     NOR       |  R   | 000000 | 100111  |
-// |  4 |     OR        |  R   | 000000 | 100101  |
-// |  5 |     SUB       |  R   | 000000 | 100010  |
-// |  6 |     XOR       |  R   | 000000 | 100110  |
-// |  7 |     SLT       |  R   | 000000 | 101010  |
-// |  8 |     SRA       |  R   | 000000 | 000011  |
-// |  9 |     SRAV      |  R   | 000000 | 000111  |
-// | 10 |     SRL       |  R   | 000000 | 000010  |
-// | 11 |     SRLV      |  R   | 000000 | 000110  |
-// | 12 |     SLL       |  R   | 000000 | 000000  |
-// | 13 |     SLTU      |  R   | 000000 | 101011  |
+// |  1 |     ADD       |  R   | 000000 | 100000  | .
+// |  2 |     AND       |  R   | 000000 | 100100  | .
+// |  3 |     NOR       |  R   | 000000 | 100111  | .
+// |  4 |     OR        |  R   | 000000 | 100101  | .
+// |  5 |     SUB       |  R   | 000000 | 100010  | .
+// |  6 |     XOR       |  R   | 000000 | 100110  | .
+// |  7 |     SLT       |  R   | 000000 | 101010  | .
+// |  8 |     SRA       |  R   | 000000 | 000011  | .
+// |  9 |     SRAV      |  R   | 000000 | 000111  | .
+// | 10 |     SRL       |  R   | 000000 | 000010  | .
+// | 11 |     SRLV      |  R   | 000000 | 000110  | .
+// | 12 |     SLL       |  R   | 000000 | 000000  | .
+// | 13 |     SLTU      |  R   | 000000 | 101011  | .
 
-// | 14 |     ADDI      |  I   | 001000 | 000000  |
-// | 15 |     ANDI      |  I   | 001100 | 000000  |
-// | 16 |     XORI      |  I   | 001110 | 000000  |
-// | 17 |     ORI       |  I   | 001101 | 000000  |
-// | 18 |     SLTI      |  I   | 001010 | 000000  |
-// | 19 |     SLTIU     |  I   | 001011 | 000000  |
-// | 20 |     BEQ       |  I   | 000100 | 000000  |
-// | 21 |     BGEZ      |  I   | 000001 | 000000  | 
-// | 22 |     BGTZ      |  I   | 000111 | 000000  |
-// | 23 |     BLEZ      |  I   | 000110 | 000000  |
-// | 24 |     BNE       |  I   | 000101 | 000000  |
-// | 25 |     LB        |  I   | 100000 | 000000  |
-// | 26 |     SB        |  I   | 101000 | 000000  |
+// | 14 |     ADDI      |  I   | 001000 | 000000  | .
+// | 15 |     ANDI      |  I   | 001100 | 000000  | .
+// | 16 |     XORI      |  I   | 001110 | 000000  | .
+// | 17 |     ORI       |  I   | 001101 | 000000  | .
+// | 18 |     SLTI      |  I   | 001010 | 000000  | .
+// | 19 |     SLTIU     |  I   | 001011 | 000000  | .
+// | 20 |     BEQ       |  I   | 000100 | 000000  | .
+// | 21 |     BGEZ      |  I   | 000001 | 000000  | .
+// | 22 |     BGTZ      |  I   | 000111 | 000000  | .
+// | 23 |     BLEZ      |  I   | 000110 | 000000  | .
+// | 24 |     BNE       |  I   | 000101 | 000000  | .
+// | 25 |     LB        |  I   | 100000 | 000000  | .
+// | 26 |     SB        |  I   | 101000 | 000000  | .
 //
-// | 27 |     J         |  J   | 000010 | 000000  |
+// | 27 |     J         |  J   | 000010 | 000000  | .
 // | 28 |     JAL       |  J   | 000011 | 000000  | (Not implemented yet)
 // |----------------------------------------------|
 
@@ -86,7 +86,7 @@ module decode_instr(
 	assign rs = instr[25:21];
 	assign rt = (opcode == 6'b000001) ? 5'b0 : instr[20:16];
          //assign rt = instr[20:16];
-	assign rd = instr[15:11];
+	assign rd = (opcode == 6'b000010) ? 5'b11111 : instr[15:11];
 	assign shamt = instr[10:6];
 	assign funct = instr[5:0];
 	assign imm16 = instr[15:0];
@@ -104,7 +104,7 @@ module decode_instr(
 	assign mem_write = (opcode == 6'b101011 | opcode == 6'b101000) ? 1 : 0;
 	assign mem_to_reg = (opcode == 6'b100000) ? 1 : 0;
 	
-	assign jump = (opcode == 6'b000010) ? 1 : 0;
+	assign jump = (opcode == 6'b000010 | opcode == 6'b000011) ? 1 : 0;
 	assign branch = (opcode == 6'b000100 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 1 : 0; 
 
 	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101 | opcode == 6'b100000 | opcode == 6'b101000) ? 1 : 0; 
@@ -112,6 +112,10 @@ module decode_instr(
 	
 	always @(*) begin
 		
+		if (opcode == 6'b000010) begin
+		  alu_ctr_reg = 5'b10011;
+		end
+		   		
 		// if it is a R operation
 		if (opcode == 6'b000000) begin
 
@@ -156,11 +160,11 @@ module decode_instr(
 			    alu_ctr_reg = 5'b01011;
 			end
 			//Shift-R-US-RS
-			if (funct == 6'b000010) begin // SRLV
+			if (funct == 6'b000110) begin // SRLV
 			    alu_ctr_reg = 5'b01110;
 			end
 			//Shift-R-US-SHAMT
-			if (funct == 6'b000110) begin // SRL
+			if (funct == 6'b000010) begin // SRL
 			    alu_ctr_reg = 5'b01111;
 			end
 			//Shift-L-RS
@@ -176,6 +180,12 @@ module decode_instr(
 		// if it is an I or J operation
 		else begin
 			case(opcode) 
+			
+			    //JAL
+			    6'b000011:
+			    begin
+			        alu_ctr_reg = 5'b00000;
+			    end
 				
 				//ADDI
 				6'b001000:
@@ -204,13 +214,13 @@ module decode_instr(
 				//SLTI
 				6'b001010:
 				begin
-					alu_ctr_reg = 5'b00111; //less than signed
+					alu_ctr_reg = 5'b00010; //less than signed
 				end
 				
 				//SLTIU
 				6'b001011:
 				begin
-					alu_ctr_reg = 5'b00010; //less than unsigned
+					alu_ctr_reg = 5'b00111; //less than unsigned
 				end
 				
 				//BEQ
@@ -219,11 +229,11 @@ module decode_instr(
 					alu_ctr_reg = 5'b00001; //sub
 				end
 
-				//BGEZ
-				6'b000001:
-				begin
-					alu_ctr_reg = 5'b10001; //Greater than equal signed
-				end
+//				//BGEZ
+//				6'b000001:
+//				begin
+//					alu_ctr_reg = 5'b10001; //Greater than equal signed
+//				end
 				
 				//BGTZ
 				6'b000111:
@@ -240,7 +250,7 @@ module decode_instr(
 				//BNE
 				6'b000101:
 				begin
-					alu_ctr_reg = 5'b10010; //Less than equal signed
+					alu_ctr_reg = 5'b10010; //Lnot equal
 				end
 				
 				//LB

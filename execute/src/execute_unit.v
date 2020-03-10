@@ -21,6 +21,7 @@
 
 module execute_unit(
     input CLK, 
+    input [31:0] pc,
     input [31:0] instr,
     output branch,
     output jump,
@@ -155,7 +156,8 @@ module execute_unit(
 //    wire zero;
     wire [31:0] alu_in2;
     mux2x1_32 ALU_SRC(alu_src, busB, imm32, alu_in2);
-    alu ALU(alu_ctr, busA, alu_in2, shamt, alu_out, v, c_out, zero); //output rooted directly to busW as data memory has not been made yet
+    
+    alu ALU(alu_ctr, busA, alu_in2, shamt, pc, alu_out, v, c_out, zero); //output rooted directly to busW as data memory has not been made yet
 //---------------------------------------------------------------------    
     
     // connecting alu/data mem output to registers data input

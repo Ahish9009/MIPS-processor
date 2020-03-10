@@ -52,6 +52,9 @@ module registers(
         if (reg_write == 1'b1 && busW) begin
             regs[rw] = busW;
         end     
+        else if (reg_write == 1'b1) begin
+            regs[rw] = busW;
+        end
     end
     
     assign reg0 = regs[0];

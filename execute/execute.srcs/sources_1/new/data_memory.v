@@ -42,17 +42,20 @@ module data_memory(
     //clocked
     always @(negedge CLK) begin
         if (write_mem == 1'b1 && data_in) begin
-            data_memory_array[addr[31:0]] = data_in[31:24];   
-            data_memory_array[addr[31:0]+1] = data_in[23:16];   
-            data_memory_array[addr[31:0]+2] = data_in[15:8];   
-            data_memory_array[addr[31:0]+3] = data_in[7:0];   
+//            data_memory_array[addr[31:0]] = data_in[31:24];   
+//            data_memory_array[addr[31:0]+1] = data_in[23:16];   
+//            data_memory_array[addr[31:0]+2] = data_in[15:8];   
+//            data_memory_array[addr[31:0]+3] = data_in[7:0];   
+            data_memory_array[addr[31:0]] = data_in[7:0];   
         end
          
     end
     
     assign word_out = data_memory_array[addr];
 //    assign data_out = {data_memory_array[addr], data_memory_array[addr+1], data_memory_array[addr+2], data_memory_array[addr+3]};
-    assign data_out = {8'b0, 8'b0, 8'b0, data_memory_array[addr]};
+//    assign data_out = { {24{data_memory_array[addr][7]}}, data_memory_array[addr]};
+    assign data_out = { 24'b0, data_memory_array[addr]};
         
     
 endmodule
+
