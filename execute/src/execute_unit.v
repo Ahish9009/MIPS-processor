@@ -22,11 +22,11 @@
 module execute_unit(
     input CLK, 
     input [31:0] instr,
-    output reg branch_reg = 0,
-    output reg jump_reg = 0,
-    output reg zero_reg = 0, 
-    output reg [15:0] imm16_reg = 16'b0,
-    output reg [25:0] instr_address_reg = 26'b0,
+    output branch,
+    output jump,
+    output zero, 
+    output [15:0] imm16,
+    output [25:0] instr_index,
     output [31:0] busA, //have to show the full array here
     output [31:0] busB,
     output [31:0] busW,
@@ -115,9 +115,10 @@ module execute_unit(
 		for decoding current instruction
 */
     wire [25:0] instr_index;
-    wire [15:0] imm16;
+//    wire [15:0] imm16;
 //    wire mem_to_reg;
-    wire reg_dst, reg_write, mem_read, jump, branch, sign_ext, alu_src;
+    wire reg_dst, reg_write, mem_read, sign_ext, alu_src;
+//    wire jump, branch,
     wire [4:0] alu_ctr;
     wire [4:0] rs, rt, rd, shamt;
     decode_instr INSTRUCTION_DECODER(instr, shamt, instr_index, imm16, reg_dst, reg_write, mem_read, mem_write, mem_to_reg, jump, branch, sign_ext, alu_src, alu_ctr, rs, rt, rd);
@@ -150,7 +151,8 @@ module execute_unit(
 /*
     alu
 */
-    wire v, c_out, zero;
+    wire v, c_out;
+//    wire zero;
     wire [31:0] alu_in2;
     mux2x1_32 ALU_SRC(alu_src, busB, imm32, alu_in2);
     alu ALU(alu_ctr, busA, alu_in2, shamt, alu_out, v, c_out, zero); //output rooted directly to busW as data memory has not been made yet
@@ -164,15 +166,15 @@ module execute_unit(
 /*
     to pass control signals to fetch at next clock cycle
 */
-    always @(negedge CLK) begin
+//    always @(negedge CLK) begin
         
-        branch_reg <= branch;
-        jump_reg <= jump;
-        zero_reg <= zero;
-        imm16_reg <= imm16;
-        instr_address_reg <= instr_index;
+//        branch_reg <= branch;
+//        jump_reg <= jump;
+//        zero_reg <= zero;
+//        imm16_reg <= imm16;
+//        instr_address_reg <= instr_index;
     
-    end
+//    end
 
 endmodule
 

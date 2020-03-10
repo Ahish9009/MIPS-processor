@@ -72,7 +72,10 @@ module fetch_unit(
     
     
     always @(negedge CLK) begin
-        pc[31:0]<= next_pc;
+        
+        if (pc == 32'b0) pc <= 32'b100;
+        else pc[31:0]<= next_pc;
+        
         instr[31:0] <= new_instr;
     end
     

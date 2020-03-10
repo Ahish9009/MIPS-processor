@@ -8,7 +8,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/
 INFO: [VRFC 10-311] analyzing module decode_instr
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/execute_unit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module execute_unit
-INFO: [VRFC 10-2458] undeclared symbol mem_to_reg, assumed default net type wire [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:123]
+WARNING: [VRFC 10-3676] redeclaration of ansi port 'instr_index' is not allowed [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:117]
+INFO: [VRFC 10-2458] undeclared symbol mem_to_reg, assumed default net type wire [/home/ahish/Sem-4/proc/execute/src/execute_unit.v:124]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ahish/Sem-4/proc/execute/src/extender.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module extender32
 INFO: [VRFC 10-311] analyzing module extender30
