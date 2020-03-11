@@ -1,7 +1,7 @@
-Running: xsim.dir/pipeline_proc_tb1_behav/xsimk -simmode gui -wdb pipeline_proc_tb1_behav.wdb -simrunnum 0 -socket 37145
+Running: xsim.dir/pipeline_proc_tb1_behav/xsimk -simmode gui -wdb pipeline_proc_tb1_behav.wdb -simrunnum 0 -socket 52231
 Design successfully loaded
-Design Loading Memory Usage: 44224 KB (Peak: 44224 KB)
-Design Loading CPU Usage: 20 ms
+Design Loading Memory Usage: 44244 KB (Peak: 44244 KB)
+Design Loading CPU Usage: 10 ms
 Simulation completed
-Simulation Memory Usage: 130320 KB (Peak: 183492 KB)
-Simulation CPU Usage: 30 ms
+Simulation Memory Usage: 130340 KB (Peak: 183512 KB)
+Simulation CPU Usage: 50 ms
