@@ -33,6 +33,18 @@ module pipeline_proc_tb1;
 	wire [31:0] reg1;
 	wire [31:0] reg2;
 	wire [31:0] reg3;
+	wire [31:0] reg4;
+	wire [31:0] reg5;
+	wire [31:0] reg6;
+	wire [31:0] reg7;
+	wire [31:0] reg8;
+	wire [31:0] reg9;
+	wire [7:0] data0;
+	wire [7:0] data1;
+	wire [7:0] data2;
+	wire [7:0] data3;
+	wire [7:0] data4;
+	wire [7:0] data5;
 	wire [31:0] instr;
 	wire [31:0] pc;
 	
@@ -47,6 +59,18 @@ module pipeline_proc_tb1;
 		.reg1(reg1), 
 		.reg2(reg2), 
 		.reg3(reg3),
+		.reg4(reg4),
+		.reg5(reg5),
+		.reg6(reg6),
+		.reg7(reg7),
+		.reg8(reg8),
+		.reg9(reg9),
+		.data0(data0),
+		.data1(data1),
+		.data2(data2),
+		.data3(data3),
+		.data4(data4),
+		.data5(data5),
 		.instr(instr),
 		.pc(pc)
 	);

@@ -32,7 +32,13 @@ module registers(
     output [31:0] reg0,
     output [31:0] reg1,
     output [31:0] reg2,
-    output [31:0] reg3
+    output [31:0] reg3,
+    output [31:0] reg4,
+    output [31:0] reg5,
+    output [31:0] reg6,
+    output [31:0] reg7,
+    output [31:0] reg8,
+    output [31:0] reg9
     );
     
     reg [31:0] regs [31:0]; //initializes the array
@@ -41,7 +47,7 @@ module registers(
 	integer i;
     initial begin 
        for (i = 0; i < 32; i=i+1) begin
-            regs[i] = 4;
+            regs[i] = 0;
        end
     end
     
@@ -61,6 +67,12 @@ module registers(
     assign reg1 = regs[1];
     assign reg2 = regs[2];
     assign reg3 = regs[3];
+    assign reg4 = regs[4];
+    assign reg5 = regs[5];
+    assign reg6 = regs[6];
+    assign reg7 = regs[7];
+    assign reg8 = regs[8];
+    assign reg9 = regs[9];
     
     
 

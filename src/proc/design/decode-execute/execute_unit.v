@@ -34,14 +34,20 @@ module execute_unit(
 	 output [31:0] reg0,
 	 output [31:0] reg1,
 	 output [31:0] reg2,
-	 output [31:0] reg3
+	 output [31:0] reg3,
 	 
-//	 output [31:0] reg4,
-//	 output [31:0] reg5,
-//	 output [31:0] reg6,
-//	 output [31:0] reg7,
-//	 output [31:0] reg8,
-//	 output [31:0] reg9,
+	 output [31:0] reg4,
+	 output [31:0] reg5,
+	 output [31:0] reg6,
+	 output [31:0] reg7,
+	 output [31:0] reg8,
+	 output [31:0] reg9,
+	 output [7:0] data0,
+	 output [7:0] data1,
+	 output [7:0] data2,
+	 output [7:0] data3,
+	 output [7:0] data4,
+	 output [7:0] data5
 //	 output [31:0] reg10,
 //	 output [31:0] reg11,
 //	 output [31:0] reg12,
@@ -73,7 +79,7 @@ module execute_unit(
     wire mem_write;
     wire [31:0] alu_out, datamem_out;
     wire [7:0] word_out;
-    data_memory DATA_MEM(CLK, mem_write, alu_out, busB, word_out, datamem_out);
+    data_memory DATA_MEM(CLK, mem_write, alu_out, busB, word_out, datamem_out, data0, data1, data2, data3, data4, data5);
     
 /*
 		for output
@@ -138,7 +144,8 @@ module execute_unit(
     mux2x1_5 RW_SRC(reg_dst, rt, rd, rw);
 	
 	//loads the values onto the buses and updates registers
-	registers REGISTERS(CLK, ra, rb, rw, reg_write, busW, busA, busB, reg0, reg1, reg2, reg3);
+//	registers REGISTERS(CLK, ra, rb, rw, reg_write, busW, busA, busB, reg0, reg1, reg2, reg3);
+	registers REGISTERS(CLK, ra, rb, rw, reg_write, busW, busA, busB, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9);
 	
 //---------------------------------------------------------------------
 	 
