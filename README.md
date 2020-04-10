@@ -291,7 +291,7 @@ The ALU takes in 2 **32-bit** inputs and the control signals, to give a **32-bit
 |:------:|:----------:|
 | 000011 | instr_index|
 
-**Format**: `J target`   
+**Format**: `JAL target`   
 **Purpose**: `Jump and Link`
 #
 
