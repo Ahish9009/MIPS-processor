@@ -1,5 +1,5 @@
 // |-------------------------------------|
-// | operation Code |   Operation        |
+// | Operation Code |   Operation        |
 // |     00000      |        +           | ADD
 // |     00001      |        -           | SUBTRACT
 // |     00010      |      <(S)         | LESS THAN SIGNED
@@ -18,8 +18,8 @@
 // |     01111      |  Shift-R-US-SHAMT  |
 // |     10000      |        <=(S)       | LESS THAN EQUAL SIGNED
 // |     10001      |        >=(S)       | GREATER THAN EQUAL SIGNED
-// |     10010      |         !=         |  NOT EQUAL TO
-// |     10011      |         JAL        |  ADD 8
+// |     10010      |         !=         | NOT EQUAL TO
+// |     10011      |         JAL        | ADD 8
 // |-------------------------------------|
 
 module alu(
@@ -48,8 +48,22 @@ module alu(
 	//for addition and subtraction
 	wire c_out_add, c_out_sub, temp_v_add, temp_v_sub;
 	wire [31:0] sum, diff;
-	adder32bit add(1'b0, x, y, sum, c_out_add, temp_v_add); 
-	adder32bit sub(1'b1, x, ~y, diff, c_out_sub, temp_v_sub); 
+	adder32bit add(
+		1'b0, 
+		x, 
+		y, 
+		sum, 
+		c_out_add, 
+		temp_v_add
+	); 
+	adder32bit sub(
+		1'b1, 
+		x, 
+		~y, 
+		diff,
+		c_out_sub, 
+		temp_v_sub
+	); 
 	
 	//main
 	always @(*)
@@ -73,13 +87,6 @@ module alu(
 			end
 			
 			5'b00010:
-//			//multiplication
-//			begin
-//				temp_res = x*y;
-//				temp_v = 0;
-//				temp_c_out = 0;
-//			end
-
 			//Less than signed
 			begin
 				temp_res = ($signed(x) < $signed(y));
@@ -222,7 +229,6 @@ module alu(
 				temp_v = 0;
 				temp_c_out = 0;
 			end
-
 		endcase
 	end
 endmodule	
