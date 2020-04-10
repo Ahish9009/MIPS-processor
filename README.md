@@ -1,6 +1,15 @@
 # MIPS Processor
 A MIPS ISA based processor designed for the course Introduction to Processor Architecture.
 
+## Architecture
+
+###### Overall Design
+![overall](_imgs/pipelined.png)  
+###### Fetch
+![fetch](_imgs/fetch.png)
+###### Execute
+![execute](_imgs/execute.png)
+
 ## Features
 * 2-stage **pipelined** processor, with the following stages
 	* Fetch
@@ -35,7 +44,7 @@ The ALU takes in 2 **32-bit** inputs and the control signals, to give a **32-bit
 |     01110      |Shift Right _**unsigned src: rs**_       |
 |     01111      |Shift Right _**unsigned src: shamt**_    |
 |     10000      |Less Than Equal _**signed**_ | 
-|     10001      |Greater Than Equal _**signed**__ | 
+|     10001      |Greater Than Equal _**signed**_ | 
 |     10010      |Not Equal           |  
 |     10011      |JAL(Add 8)          |
 
@@ -287,7 +296,7 @@ The ALU takes in 2 **32-bit** inputs and the control signals, to give a **32-bit
 #
 
 ## Assembler
-Code can be written in assembly, using the instruction set provided above. The [assembler](src/assembler/assembler.py) written will then convert it into machine code, which can then be loaded into the instruction memory.   
+Code can be written in assembly, using the instruction set provided above. The [assembler](src/assembler/assembler.py) written will convert it into machine code, which can then be loaded into the instruction memory.   
 ###### TO-DO 
 - [x] Translate basic instructions   
 - [ ] Work with code having labels   
