@@ -6,7 +6,7 @@ A MIPS ISA based processor designed for the course Introduction to Processor Arc
 	* Fetch
 	* Execute
 * 1 Branch Delay Slot
-* Replicates the **Harvard architecture**, with **separate** data and instruction memories
+* Replicates the **Harvard** architecture, with **separate** data and instruction memories
 * Instruction & Data Memory
 	* **1KB** each: **1024 x 1** _byte_
 	* Each slot is of 8-bit width
@@ -14,15 +14,8 @@ A MIPS ISA based processor designed for the course Introduction to Processor Arc
 * Has 32 **32-bit** registers 
 * Supports **R**, **I** & **J** type instructions. Full list of supported instructions is given below
 
-## Control Signals
-The following control signals are used –
-###### Branch
-###### Jump
-###### Zero
-
 ## ALU
-The ALU takes in 2 32-bit inputs and the control signals, to give a 32-bit output. The opcode to operation matching used is shown below:
-
+The ALU takes in 2 **32-bit** inputs and the control signals, to give a **32-bit** output. The opcode to operation matching used is shown below:
 | Operation Code |   Operation        |
 |:--------------:|:------------------:|
 |     00000      |Add                 | 
@@ -45,7 +38,6 @@ The ALU takes in 2 32-bit inputs and the control signals, to give a 32-bit outpu
 |     10001      |Greater Than Equal _**signed**__ | 
 |     10010      |Not Equal           |  
 |     10011      |JAL(Add 8)          |
-
 
 ## Instructions Supported
 #### R-Type
@@ -293,3 +285,26 @@ The ALU takes in 2 32-bit inputs and the control signals, to give a 32-bit outpu
 **Format**: `J target`   
 **Purpose**: `Jump and Link`
 #
+
+## Assembler
+Code can be written in assembly, using the instruction set provided above. The [assembler](src/assembler/assembler.py) written will then convert it into machine code, which can then be loaded into the instruction memory.   
+###### TO-DO 
+- [x] Translate basic instructions   
+- [ ] Work with code having labels   
+- [ ] Automatically substitute address line numbers from labels
+
+## Running
+This processor can be run on Xilinx Vivado or Xilinx ISE. It is, however, preferable to use Vivado.  
+To run,
+- Write the assembly code for the program to be run
+- Use the assembler to convert the program into machine code
+- Load all the source verilog files into a Vivado/ISE project
+- Load the generated machine code into the instruction memory
+- Simulate the project using Vivado/ISE, or generate the binary to dump onto a board
+
+## References
+- [MIPS ISA](https://s3-eu-west-1.amazonaws.com/downloads-mips/documents/MD00086-2B-MIPS32BIS-AFP-05.04.pdf)
+- Introduction to Processor Architecture, Spring'20, IIIT-H
+
+## Author(s)
+- [Ahish](https://www.github.com/Ahish9009)
