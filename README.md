@@ -16,4 +16,32 @@ A MIPS ISA based processor designed for the course Introduction to Processor Arc
 
 ## Instructions Supported
 ###### R-Type
-
+	* ADD 
+	* AND
+	* NOR 
+	* OR 
+	* SUB
+	* XOR 
+	* SLT 
+	* SRA 
+	* SRAV 
+	* SRL
+	* SRLV 
+	* SLL
+	* SLTU
+###### I-Type
+	* ADDI
+	* ANDI 
+	* XORI
+       	* ORI 
+	* SLTI 
+	* SLTIU 
+	* BEQ 
+	* BGTZ 
+	* BLEZ
+       	* BNE 
+	* LB
+	* SB
+###### J-Type
+	* J
+	* JAL
