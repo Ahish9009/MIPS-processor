@@ -78,14 +78,9 @@ module decode_instr(
 	 
 	wire [5:0] opcode, funct;
 	
-//	wire [4:0] shamt;
-//	wire [15:0] imm16;
-//	wire [25:0] instr_index;
-	 
 	assign opcode = instr[31:26];
 	assign rs = instr[25:21];
 	assign rt = (opcode == 6'b000001) ? 5'b0 : instr[20:16];
-         //assign rt = instr[20:16];
 	assign rd = (opcode == 6'b000010) ? 5'b11111 : instr[15:11];
 	assign shamt = instr[10:6];
 	assign funct = instr[5:0];
@@ -98,17 +93,23 @@ module decode_instr(
 	
 	// all these can be decided simply by opcode
 	assign reg_dst = (opcode == 6'b000000) ? 1 : 0; 
-	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 | opcode == 6'b001110 | opcode == 6'b001101 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b100000) ? 1 : 0;
+	assign reg_write = (opcode == 6'b000000 | opcode == 6'b001000 | opcode == 6'b001100 
+			    | opcode == 6'b001110 | opcode == 6'b001101 | opcode == 6'b001010 
+			    | opcode == 6'b001011 | opcode == 6'b100000) ? 1 : 0;
 	
 	assign mem_read = (opcode == 6'b100011 | opcode == 6'b100000) ? 1 : 0;
 	assign mem_write = (opcode == 6'b101011 | opcode == 6'b101000) ? 1 : 0;
 	assign mem_to_reg = (opcode == 6'b100000) ? 1 : 0;
-	
 	assign jump = (opcode == 6'b000010 | opcode == 6'b000011) ? 1 : 0;
-	assign branch = (opcode == 6'b000100 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 1 : 0; 
-
-	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101 | opcode == 6'b100000 | opcode == 6'b101000) ? 1 : 0; 
-	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100 | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 0 : 1;
+	
+	assign branch = (opcode == 6'b000100 | opcode == 6'b000100 | opcode == 6'b000001 
+			 | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 1 : 0; 
+	assign sign_ext = (opcode == 6'b001000 | opcode == 6'b101011 | opcode == 6'b100011 
+			   | opcode == 6'b001010 | opcode == 6'b001011 | opcode == 6'b000100 
+			   | opcode == 6'b000001 | opcode == 6'b000111 | opcode == 6'b000110 
+			   | opcode == 6'b000101 | opcode == 6'b100000 | opcode == 6'b101000) ? 1 : 0; 
+	assign alu_src = (opcode == 6'b000000 | opcode == 6'b000100 | opcode == 6'b000001 
+			  | opcode == 6'b000111 | opcode == 6'b000110 | opcode == 6'b000101) ? 0 : 1;
 	
 	always @(*) begin
 		
@@ -229,12 +230,6 @@ module decode_instr(
 					alu_ctr_reg = 5'b00001; //sub
 				end
 
-//				//BGEZ
-//				6'b000001:
-//				begin
-//					alu_ctr_reg = 5'b10001; //Greater than equal signed
-//				end
-				
 				//BGTZ
 				6'b000111:
 				begin
@@ -264,18 +259,6 @@ module decode_instr(
 				begin
 					alu_ctr_reg = 5'b00000; //add
 				end
-				
-				//LW
-				//6'b100011:
-				//begin
-					//alu_ctr_reg = 5'b00000; add
-				//end
-				
-				//SW
-				//6'b101011:
-				//begin
-					//alu_ctr_reg = 5'b00000; add
-				//end
 				
 				//J
 				6'b000010:
