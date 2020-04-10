@@ -107,19 +107,91 @@ A MIPS ISA based processor designed for the course Introduction to Processor Arc
 
 **Format**: `SLTU rd, rs, rt`
 
-###### I-Type
-* ADDI
-* ANDI 
-* XORI
-* ORI 
-* SLTI 
-* SLTIU 
-* BEQ 
-* BGTZ 
-* BLEZ
-* BNE 
-* LB
-* SB
+#### I-Type
+###### ADDI
+|  ADDI  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 001000 | rs | rt | immediate |
+
+**Format**: `ADDI rt, rs, immediate`
+
+###### ANDI 
+|  ANDI  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 001100 | rs | rt | immediate |
+
+**Format**: `ANDI rt, rs, immediate`
+
+###### XORI
+|  XORI  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 001110 | rs | rt | immediate |
+
+**Format**: `XORI rt, rs, immediate`
+
+###### ORI 
+|  ORI  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 001101 | rs | rt | immediate |
+
+**Format**: `ORI rt, rs, immediate`
+
+###### SLTI 
+|  SLTI  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 001010 | rs | rt | immediate |
+
+**Format**: `SLTI rt, rs, immediate`
+
+###### SLTIU 
+|  SLTIU | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 001011 | rs | rt | immediate |
+
+**Format**: `SLTIU rt, rs, immediate`
+
+###### BEQ 
+|  BEQ  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 000100 | rs | rt | offset |
+
+**Format**: `BEQ rs, rt, offset`
+
+###### BGTZ 
+|  BGTZ  | R<sub>1</sub> | 0 | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 000111 | rs | 00000 | offset |
+
+**Format**: `BGTZ rs, offset`
+
+###### BLEZ
+|  BLEZ  | R<sub>1</sub> | 0 | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 000110 | rs | 00000 | offset |
+
+**Format**: `BLEZ rs, offset`
+
+###### BNE 
+|  BNE  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 000101 | rs | rt | offset |
+
+**Format**: `BNE rs, rt, offset`
+
+###### LB
+|  LB  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 100000 | base | rt | offset |
+
+**Format**: `LB rt, offset(base)`
+
+###### SB
+|  SB  | R<sub>1</sub> | R<sub>2</sub> | imm16 |
+|:------:|:--:|:--:|:---------:|
+| 101000 | base | rt | offset |
+
+**Format**: `SB rt, offset(base)`
+
 ###### J-Type
 * J
 * JAL
