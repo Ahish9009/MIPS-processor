@@ -12,7 +12,40 @@ A MIPS ISA based processor designed for the course Introduction to Processor Arc
 	* Each slot is of 8-bit width
 	* Extensible to **16KB**: **4096 x 4** _bytes_
 * Has 32 **32-bit** registers 
-* Supports R, I & J type instructions. Full list of supported instructions is given below
+* Supports **R**, **I** & **J** type instructions. Full list of supported instructions is given below
+
+## Control Signals
+The following control signals are used –
+###### Branch
+###### Jump
+###### Zero
+
+## ALU
+The ALU takes in 2 32-bit inputs and the control signals, to give a 32-bit output. The opcode to operation matching used is shown below:
+
+| Operation Code |   Operation        |
+|:--------------:|:------------------:|
+|     00000      |Add                 | 
+|     00001      |Subtract            | 
+|     00010      |Less Than _**signed**_    |  
+|     00011      |Shift Right _**signed src: rs**_ |
+|     00100      |Shift Left **_src: rs_** |
+|     00101      |Shift Left **_src: shamt_** | 
+|     00110      |Greater Than _**signed**_ |
+|     00111      |Less Than _**unsigned**_  | 
+|     01000      |Equal To            | 
+|     01001      |AND                 | 
+|     01010      |OR                  | 
+|     01011      |Shift Right **_signed src: shamt_**    |
+|     01100      |NOR                 |
+|     01101      |XOR                 |
+|     01110      |Shift Right _**unsigned src: rs**_       |
+|     01111      |Shift Right _**unsigned src: shamt**_    |
+|     10000      |Less Than Equal _**signed**_ | 
+|     10001      |Greater Than Equal _**signed**__ | 
+|     10010      |Not Equal           |  
+|     10011      |JAL(Add 8)          |
+
 
 ## Instructions Supported
 #### R-Type
